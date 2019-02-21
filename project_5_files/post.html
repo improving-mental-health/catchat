@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/extras.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -30,26 +31,39 @@
 
 
 
+
+
 <!-- Container (Post form) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
 
 
-  <!-- Post Form --> 
+  <!-- Post Form -->
   Post: <input id="new-post-text" type="textbox" name="Post" value=""><br>
   <button id="post-submit" onclick="post()">Submit</button>
   <a href="index.html">
-    
+
   </a>
 
   <div id="post1"></div>
 
   <p>Click the "Submit" button and the form-data will be sent to a page on the server called "/action_page.php".</p>
-
-  <script src="post.js"></script>
+<div id = "allposts">
+  <div id = "testPost" class = "user_post">
+    <div id = "info">
+      <div id = "reply">1 hour ago</div>
+      <div id = "reply"><b>reply/report</b></div>
+    </div>
+    <div class = "actions">
+    <i class="material-icons sub-actions">expand_less</i>
+    0
+    <i class="material-icons sub-actions ">expand_more</i>
+    </div>
+  </div>
+</div>
 
 </div>
 
-  
+
 
 
 
@@ -58,7 +72,7 @@
   <div id="footer"></div>
 </footer>
 
-
+  <script src="app.js"></script>
 
 </body>
 
@@ -66,6 +80,3 @@
 
 
 </html>
-
-
-
