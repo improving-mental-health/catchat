@@ -5,28 +5,48 @@ body, html {
   line-height: 1.8;
 }
 /* login stuff */
-.page-container{
+.login-form-container{
   border: 2px solid purple;
-    background-color: #D9DBDB;
-    color: black;
-    width: 50%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    display: inline-block;
-    margin-top: 10%;
-    height: 400px;
+  background-color: #D9DBDB;
+  color: black;
+  width: 380px;
+  margin-top: 150px;
+  margin-left: 30%;
+  display: inline-block;
+  height: 375px;
+  text-align: center;
 }
-#log{
+
+
+#login-title{
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
-#name{margin-bottom: 30px;}
-#netid{margin-bottom: 30px;}
-#password{margin-bottom: 30px}
-#login-submit{}
+
+#field-names{
+  float: left;
+  width: 39%;
+  text-align: right;
+}
+
+#field-textboxes{
+  width: 60%;
+  float: right;
+}
+
+.login-input{
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.login-field-label{
+  margin-bottom: 38px;
+}
+
+#login-submit-button{
+  padding-top: 200px;
+}
 .myButton {
 	-moz-box-shadow: 3px 4px 0px 0px #1564ad;
 	-webkit-box-shadow: 3px 4px 0px 0px #1564ad;

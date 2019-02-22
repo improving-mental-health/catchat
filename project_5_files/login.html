@@ -13,12 +13,21 @@
     <a href="index.html" class="w3-bar-item w3-button" id= "logo">CATCHAT</a>
   </div>
 
-  <div class = "page-container">
-    <div id="log"><b>Log into WILDCHAT</b></div>
-    <div id="name"><input type = "text" name="name" value = "First and Last Name"></div>
-    <div id="netid"><input type = "text" name="NetID" value = "NetID"> </div>
-    <div id="password"><input type = "text" name="Password" value = "Password"></div>
-    <div id="login-submit"><a href="index.html" class="myButton">Submit</a></div>
+  <div class = "login-form-container">
+    <div id="login-title"><b>Login to CATCHAT</b></div>
+    <div id = field-names>
+      <div class="login-field-label">First and Last Name: </div>
+      <div class="login-field-label">NetID: </div>
+      <div class="login-field-label">Password: </div>
+    </div>
+    <div id = field-textboxes>
+      <input type = "text" name="name" class="login-input">
+      <input type = "text" name="NetID" class="login-input">
+      <input type="password" class="login-input">
+    </div>
+    
+    <div id="login-submit-button"><a href="index.html" class="myButton">Login</a></div>
+
   </div>
 </body>
 </html>
