@@ -103,10 +103,19 @@ body, html {
 }
 #info{
   display: inline-block;
-  float: left;
-  padding-top: 80px;
-  margin-left: 10px;
-  font-size: 10px;
+float: left;
+font-size: 10px;
+}
+#post_content{
+  display: inline-flex;
+float: left;
+overflow: hidden;
+height: 90px;
+width: 87%;
+font-size: 12px;
+text-align: left;
+margin-left: 10px;
+margin-top: 10px;
 }
 #header{
   height: 50px;
@@ -152,10 +161,10 @@ body, html {
   margin: 5px;
 }
 .actions{
-float: right;
-display: inline-grid;
-width: 5%;
-padding-right: 7%;
+      display: inline-grid;
+      width: 5%;
+      padding-top: 10px;
+      float: right;
 
 }
 .user_post{
