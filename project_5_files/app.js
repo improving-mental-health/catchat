@@ -1,19 +1,47 @@
+//api keys
+
+
 // Global Variables
-var posts = [];
 
 
-/* function init() {
-	for (var i = 0; i < posts.length; i++){
-		console.log(i);
-		var postText = "fdf";
-	 	x = document.createElement('div');
-		x.setAttribute("id", "testPost");
-		document.getElementById("testText").innerHTML == "please work";
+
+function init() {
+	var posts = [];
+	myStorage = window.localStorage;
+	var existingPosts =  myStorage.getItem('posts')
+	if(existingPosts) { //array exists
+		posts = existingPosts;
+	}
+	else{
+		myStorage.setItem("posts", []);
 
 	}
-} */
+
+	for(var = 0; i < posts.len(); i++){
+		//populate divs with array
+		var post = posts[i];
+		post["text"]
+	}
+}
 
 function post() {
+
+	var currentPosts = localStorage.getItem("posts");
+	var newPost = {
+		"text" : document.getElementById('new-post-text').value,
+		"votes": 0,
+		"reply": []
+
+	}
+
+	currentPosts.append(newPost);
+	localStorage.setItem("posts", currentPosts)
+
+
+//newPost["reply"][2]
+
+
+
 
 	// get new post from user input and append to "posts" array
 	var new_post = document.getElementById('new-post-text').value;
