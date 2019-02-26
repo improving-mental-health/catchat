@@ -4,6 +4,8 @@ body, html {
   color: #777;
   line-height: 1.8;
 }
+
+
 /* login stuff */
 .login-form-container{
   border: 2px solid purple;
@@ -30,7 +32,7 @@ body, html {
   text-align: right;
 }
 
-#field-textboxes{
+#login-field-textboxes{
   width: 60%;
   float: right;
 }
@@ -86,6 +88,37 @@ body, html {
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+/* Post Popup */
+#popupBoxOnePosition{
+  top: 0; left: 0; position: fixed; width: 100%; height: 120%;
+  background-color: rgba(0,0,0,0.7); display: none;
+}
+.popupBoxWrapper{
+  width: 550px; margin: 50px auto; text-align: center;
+}
+.popupBoxContent{
+  background-color: #FFF; padding: 15px;
+  height: 325px;
+  margin-top: 12%;
+}
+#post-title{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.post-input{
+  width: 100%;
+  height: 134px;
+}
+#post-field-textboxes{
+  margin-bottom: 25px;
+}
+
+#login-submit-button{
 }
 
 #myNavbar{
