@@ -12,7 +12,7 @@ body, html {
   background-color: #D9DBDB;
   color: black;
   width: 380px;
-  margin-top: 150px;
+  margin-top: 100px;
   margin-left: 30%;
   display: inline-block;
   height: 375px;
@@ -34,7 +34,8 @@ body, html {
 
 #login-field-textboxes{
   width: 60%;
-  float: right;
+  display: inline-block;
+  text-align: center;
 }
 
 .login-input{
@@ -47,7 +48,7 @@ body, html {
 }
 
 #login-submit-button{
-  padding-top: 200px;
+
 }
 .myButton {
 	-moz-box-shadow: 3px 4px 0px 0px #1564ad;
@@ -108,6 +109,7 @@ body, html {
   margin-top: 10px;
   margin-bottom: 20px;
   text-align: center;
+  margin-left: 22px;
 }
 
 .post-input{
@@ -117,6 +119,12 @@ body, html {
 #post-field-textboxes{
   margin-bottom: 25px;
   overflow: hidden;
+}
+
+#exit-post{
+  float: right;
+  color: red;
+  z-index: -1;
 }
 
 #login-submit-button{
