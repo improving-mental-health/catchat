@@ -9,29 +9,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <body onload = "init()">
+
+<!-- post popup window -->
   <script type="text/javascript">
-			<!--
 			    function toggle_visibility(id) {
-			       var e = document.getElementById(id);
-			       if(e.style.display == 'block')
-			          e.style.display = 'none';
-			       else
-			          e.style.display = 'block';
+			    var e = document.getElementById(id);
+			    if(e.style.display == 'block')
+			       e.style.display = 'none';
+			    else
+			       e.style.display = 'block';
 			    }
-			//-->
-		</script>
+  </script>
     <div id="popupBoxOnePosition">
 			<div class="popupBoxWrapper">
 				<div class="popupBoxContent">
             <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');"><i class="material-icons">close</i></a></div>
             <div id="post-title"><b>Write Post</b></div>
             <div id = post-field-textboxes>
-              <input type = "text" name="post" class="post-input">
+              <input id = "input_text" type = "text" placeholder="What's on your mind?" name="post" class="post-input">
             </div>
-            <div id="post-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxOnePosition');">Post</a></div>
+            <div id="post-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxOnePosition');submitPost()">Post</a></div>
 				</div>
 			</div>
 		</div>
+
     <!-- Navbar (sit on top) -->
     <div id = "header">
       <a href="index.html" class="w3-bar-item w3-button" id= "logo">CATCHAT</a>
@@ -40,78 +41,18 @@
     <!-- spacer for formatting -->
     <div id = "spacer"></div>
     <!-- main post container -->
-    <div id = "posts">
+    <div id = "all_posts">
 
-      <div  class = "user_post">
+      <div  class = "user_post" id = "postShell">
         <div id = "testText"></div>
         <div id = "info">
           <div id = "reply">1 hour ago</div>
           <div id = "reply"><b>reply/report</b></div>
         </div>
         <div class = "actions">
-        <i class="material-icons sub-actions">expand_less</i>
-        0
-        <i class="material-icons sub-actions ">expand_more</i>
-        </div>
-      </div>
-
-      <div class = "user_post">
-        <div id = "info">
-          <div id = "reply">1 hour ago</div>
-          <div id = "reply"><b>reply/report</b></div>
-        </div>
-        <div class = "actions">
-        <i class="material-icons sub-actions">expand_less</i>
-        0
-        <i class="material-icons sub-actions ">expand_more</i>
-        </div>
-      </div>
-
-      <div class = "user_post">
-        <div id = "info">
-          <div id = "reply">1 hour ago</div>
-          <div id = "reply"><b>reply/report</b></div>
-        </div>
-        <div class = "actions">
-        <i class="material-icons sub-actions">expand_less</i>
-        0
-        <i class="material-icons sub-actions ">expand_more</i>
-        </div>
-      </div>
-
-      <div class = "user_post">
-        <div id = "info">
-          <div id = "reply">1 hour ago</div>
-          <div id = "reply"><b>reply/report</b></div>
-        </div>
-        <div class = "actions">
-        <i class="material-icons sub-actions">expand_less</i>
-        0
-        <i class="material-icons sub-actions ">expand_more</i>
-        </div>
-      </div>
-
-      <div class = "user_post">
-        <div id = "info">
-          <div id = "reply">1 hour ago</div>
-          <div id = "reply"><b>reply/report</b></div>
-        </div>
-        <div class = "actions">
-        <i class="material-icons sub-actions">expand_less</i>
-        0
-        <i class="material-icons sub-actions ">expand_more</i>
-        </div>
-      </div>
-
-      <div class = "user_post">
-        <div id = "info">
-          <div id = "reply">1 hour ago</div>
-          <div id = "reply"><b>reply/report</b></div>
-        </div>
-        <div class = "actions">
-        <i class="material-icons sub-actions">expand_less</i>
-        0
-        <i class="material-icons sub-actions ">expand_more</i>
+          <i class="material-icons sub-actions">expand_less</i>
+          0
+          <i class="material-icons sub-actions ">expand_more</i>
         </div>
       </div>
 
