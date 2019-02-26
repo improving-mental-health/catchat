@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>CATCHAT</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/w3.css">
@@ -9,12 +9,32 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <body onload = "init()">
-
-  <div>
+  <script type="text/javascript">
+			<!--
+			    function toggle_visibility(id) {
+			       var e = document.getElementById(id);
+			       if(e.style.display == 'block')
+			          e.style.display = 'none';
+			       else
+			          e.style.display = 'block';
+			    }
+			//-->
+		</script>
+    <div id="popupBoxOnePosition">
+			<div class="popupBoxWrapper">
+				<div class="popupBoxContent">
+            <div id="post-title"><b>Write Post</b></div>
+            <div id = post-field-textboxes>
+              <input type = "text" name="post" class="post-input">
+            </div>
+            <div id="post-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxOnePosition');">Post</a></div>
+				</div>
+			</div>
+		</div>
     <!-- Navbar (sit on top) -->
     <div id = "header">
       <a href="index.html" class="w3-bar-item w3-button" id= "logo">CATCHAT</a>
-      <a href ="post.html" id = "plus_post"><i class="material-icons" id = "plus_post_logo">note_add</i></a>
+      <a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');" id = "plus_post"><i class="material-icons" id = "plus_post_logo">note_add</i></a>
     </div>
     <!-- spacer for formatting -->
     <div id = "spacer"></div>
