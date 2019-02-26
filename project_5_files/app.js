@@ -39,7 +39,7 @@ function post() {
 		"votes": 0,
 		"reply": []
 	}
-	
+
 	//append dictionary to currentPosts array
 	currentPosts.push(newPost);
 	console.log(newPost);
