@@ -5,7 +5,13 @@
 
 
 
-function init() {
+
+	var hardText = [
+		"i need help",
+		"I'm doing great",
+		"EECS 330 is hard"
+	]
+	function init() {
 	var posts = [];
 	myStorage = window.localStorage;
 	var existingPosts =  myStorage.getItem('posts')
@@ -17,11 +23,20 @@ function init() {
 
 	}
 
-	for(var = 0; i < posts.len(); i++){
+	for(i = 0; i < posts.length; i++){
 		//populate divs with array
 		var post = posts[i];
 		post["text"]
 	}
+}
+
+function submitPost() {
+	var text = document.getElementById('input_text').value;
+	var shell = document.getElementById("postShell");
+	var subshell = shell.cloneNode(true);
+	console.log(hardText[1]);
+	all_posts.appendChild(subshell);
+	subshell.getElementsByTagName('div')[0].innerHTML = text;
 }
 
 function post() {
