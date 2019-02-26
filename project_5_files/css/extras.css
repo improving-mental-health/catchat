@@ -116,6 +116,7 @@ body, html {
 }
 #post-field-textboxes{
   margin-bottom: 25px;
+  overflow: hidden;
 }
 
 #login-submit-button{
