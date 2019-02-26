@@ -20,35 +20,34 @@ function init() {
 	//if no existing posts, initalize new post array in storage
 	else{
 		myStorage.setItem("posts", []);
-
 	}
-
-	for(var = 0; i < posts.len(); i++){
+	/*
+	for(var i = 0; i < posts.len(); i++){
 		//populate divs with array
 		var post = posts[i];
 		//access the text field of each post dictionary entry
-		post["text"]
+		post["text"]*/
 	}
-}
+
 
 function post() {
 
 	var currentPosts = localStorage.getItem("posts");
+	//initialize newPost dictionary entry
 	var newPost = {
 		"text" : document.getElementById('new-post-text').value,
 		"votes": 0,
 		"reply": []
-
 	}
-
-	currentPosts.append(newPost);
+	
+	//append dictionary to currentPosts array
+	currentPosts.push(newPost);
+	console.log(newPost);
+	//add updated array back to local storage
 	localStorage.setItem("posts", currentPosts)
 
 //access the second reply of the new post ->
 //newPost["reply"][2]
-
-
-
 
 	// get new post from user input and append to "posts" array
 	var new_post = document.getElementById('new-post-text').value;
@@ -61,7 +60,7 @@ function post() {
 		console.log(i);
 
 		allposts.appendChild(p2);
-		p2.getElementsByTagName('div')[0].innerHTML = posts[i];
+		p2.getElementsByTagName('div')[0].innerHTML = new_post["text"];
 
 	}
 	console.log(posts);

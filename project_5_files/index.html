@@ -18,7 +18,39 @@
     </div>
     <!-- spacer for formatting -->
     <div id = "spacer"></div>
+    <!-- janky post interface until mason gets the modal up-->
+    <!-- Container (Post form) -->
+    <div class="w3-content w3-container w3-padding-64" id="about">
+
+
+      <!-- Post Form -->
+      Post: <input id="new-post-text" type="textbox" name="Post" value=""><br>
+      <button id="post-submit" onclick= "post()" >Post</button>
+      <a href="index.html">
+
+      </a>
+
+      <div id="post1"></div>
+
+
+    <div id = "allposts">
+      <div id = "testPost" class = "user_post">
+        <div id = "post_content">this is a test</div>
+        <div id = "info">
+          <div id = "reply">1 hour ago</div>
+          <div id = "reply"><b>reply/report</b></div>
+        </div>
+        <div class = "actions">
+        <i class="material-icons sub-actions" onclick = "upvote()">expand_less</i>
+        <div id = "vote_count">0</div>
+        <i class="material-icons sub-actions ">expand_more</i>
+        </div>
+      </div>
+    </div>
+
+    </div>
     <!-- main post container -->
+
     <div id = "posts">
 
       <div  class = "user_post">
