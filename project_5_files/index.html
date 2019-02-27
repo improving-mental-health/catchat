@@ -32,7 +32,18 @@
 				</div>
 			</div>
 		</div>
-
+    <div hidden id="popupBoxReply">
+			<div class="replyBoxWrapper">
+				<div class="replyBoxContent">
+            <div id="exit-reply"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxReply');"><i class="material-icons">close</i></a></div>
+            <div id="reply-title"><b>Reply Post</b></div>
+            <div id = reply-field-textboxes>
+              <input id = "input_text" type = "text" placeholder="What's your Responce?" name="reply" class="reply-input">
+            </div>
+            <div id="reply-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxReply');">Reply</a></div> <!-- Need to add a reply post function -->
+				</div>
+			</div>
+		</div>
     <!-- Navbar (sit on top) -->
     <div id = "header">
       <a href="index.html" class="w3-bar-item w3-button" id= "logo">CATCHAT</a>
@@ -47,7 +58,7 @@
         <div id = "testText"></div>
         <div id = "info">
           <div id = "reply">1 hour ago</div>
-          <div id = "reply"><b>reply/report</b></div>
+          <div id = "reply"><b><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxReply');">reply</a>/report</b></div>
         </div>
         <div class = "actions">
           <i class="material-icons sub-actions">expand_less</i>
