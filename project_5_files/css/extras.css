@@ -190,12 +190,47 @@ body, html {
   height: 300px;
   text-align: center;
 }
-#reply{
-    float: left;
+#time{
+  margin-left: 50px;
+  font-size: 10px;
+  padding-bottom: 3px;
+  margin-top: 180px;
+  margin-left: 1119px;
+}
+#responses{
+  float: left;
+  margin-left: 15px;
+  font-size: 10px;
+  padding-bottom: 1px;
+  margin-top: 140px;
+}
 
-    margin-left: 10px;
-    font-size: 10px;
-    padding-bottom: 3px;
+#wrapper{
+  display: flex;
+}
+
+#reply{
+  margin-left: 20px;
+  color: purple;
+  font-size: 200%;
+}
+
+#report{
+  margin-left: 20px;
+  font-size: 200%;
+  color: maroon;
+}
+
+#upvote{
+  color: blue;
+}
+
+#downvote{
+  color: red;
+}
+
+#votes{
+  color: black;
 }
 #info{
   display: inline-block;
@@ -261,6 +296,7 @@ margin-top: 10px;
       width: 5%;
       padding-top: 10px;
       float: right;
+      margin-bottom: 20px;
 
 }
 .user_post{
@@ -269,6 +305,11 @@ margin-top: 10px;
 text-align: center;
 border: gray solid 1px;
 margin: 10px;
+}
+
+#testText{
+  text-align: left;
+  color: black;
 }
 
 /* Create a Parallax Effect */
