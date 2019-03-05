@@ -45,7 +45,7 @@ body, html {
   display: table-cell;
   width: 90%;
 }
-#voteCount {
+.voteCount {
   padding-left: 12px;
 }
 .content{
@@ -233,7 +233,6 @@ font-size: 12px;
 #plus_post_logo{
   height: 150%
   display: inline-block;
-  padding-top: 15px;
   width: 50px;
   color: white;
 }

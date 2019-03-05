@@ -3,16 +3,17 @@
 
 // Global Variables
 
-var postsDiv = [];
+
+var currentPosts = [];
 var count = 0;
 
-
-	var hardText = [
-		"i need help",
-		"I'm doing great",
-		"EECS 330 is hard"
-	]
 	function init() {
+		myStorage = window.localStorage;
+		//var posts = [];
+		myStorage.setItem("posts", []);
+
+
+	/*
 	var posts = [];
 	myStorage = window.localStorage;
 	var existingPosts =  myStorage.getItem('posts')
@@ -28,24 +29,45 @@ var count = 0;
 		//populate divs with array
 		var post = posts[i];
 		post["text"]
-	}
+	}*/
 }
+/*var div = document.getElementById('div_id'),
+    clone = div.cloneNode(true); // true means clone all childNodes and all event handlers
+clone.id = "some_id";
+document.body.appendChild(clone); */
 
 function submitPost() {
 
 	var text = document.getElementById('input_text').value;
 	if (text == ""){
-		console.log("cannot make empty post");
+		console.log("error: cannot make empty post");
 	}
 	else{
+
+		var newPost = {
+			"text" : document.getElementById('input_text').value,
+			"votes": 0,
+			"reply": []
+		}
+		currentPosts.push(text);
+		console.log(currentPosts)
+		localStorage.setItem("posts", currentPosts)
+
+
 	var shell = document.getElementById("postContainer");
+
 	var subshell = shell.cloneNode(true);
-	console.log(hardText[1]);
+	count += 1;
+	subshell.id = "postContainer" + count
+	subshell.getElementsByTagName('div')[5].id = "reply" + count
+	subshell.getElementsByTagName('div')[6].id = "report" + count
+	subshell.getElementsByTagName('div')[8].id = "upvote" + count
+	subshell.getElementsByTagName('div')[9].id = "voteCount" + count
+	subshell.getElementsByTagName('div')[10].id = "downvote" + count
 	all_posts.appendChild(subshell);
 	subshell.getElementsByTagName('div')[2].innerHTML = text;
-	postsDiv[count] = subshell;
-	count += 1;
-	console.log(postsDiv);
+
+
 	document.getElementById('input_text').value = ""
 }
 }
