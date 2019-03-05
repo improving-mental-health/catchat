@@ -32,15 +32,22 @@ var count = 0;
 }
 
 function submitPost() {
+
 	var text = document.getElementById('input_text').value;
+	if (text == ""){
+		console.log("cannot make empty post");
+	}
+	else{
 	var shell = document.getElementById("postContainer");
 	var subshell = shell.cloneNode(true);
 	console.log(hardText[1]);
 	all_posts.appendChild(subshell);
-	subshell.getElementsByTagName('div')[0].innerHTML = text;
+	subshell.getElementsByTagName('div')[2].innerHTML = text;
 	postsDiv[count] = subshell;
 	count += 1;
 	console.log(postsDiv);
+	document.getElementById('input_text').value = ""
+}
 }
 
 
