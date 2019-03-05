@@ -32,7 +32,7 @@ body, html {
 
 }
 
-#postShell{
+.postShell{
     border: 2px solid gray;
     width: 90%;
     align-items: center;

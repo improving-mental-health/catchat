@@ -33,7 +33,7 @@ var count = 0;
 
 function submitPost() {
 	var text = document.getElementById('input_text').value;
-	var shell = document.getElementById("postShell");
+	var shell = document.getElementById("postContainer");
 	var subshell = shell.cloneNode(true);
 	console.log(hardText[1]);
 	all_posts.appendChild(subshell);
