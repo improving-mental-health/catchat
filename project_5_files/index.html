@@ -38,9 +38,9 @@
             <div id="exit-reply"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxReply');"><i class="material-icons">close</i></a></div>
             <div id="reply-title"><b>Reply Post</b></div>
             <div id = reply-field-textboxes>
-              <input id = "input_text" type = "text" placeholder="What's your Response?" name="reply" class="reply-input">
+              <input id = "reply_text" type = "text" placeholder="What's your Response?" name="reply" class="reply-input">
             </div>
-            <div id="reply-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxReply');">Reply</a></div> <!-- Need to add a reply post function -->
+            <div id="reply-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxReply');replyPost()">Reply</a></div> <!-- Need to add a reply post function -->
 				</div>
 			</div>
 		</div>
@@ -54,18 +54,26 @@
     <!-- main post container -->
     <div id = "all_posts">
 
-      <div  class = "user_post" id = "postShell">
-        <div id = "testText"></div>
-        <div id = "info">
-          <div id = "responses"><b id="wrapper"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxReply');"><p id = "reply">reply</p></a><p id="report">report</p></b></div>
-          <div id = "time">1 hour ago</div>
+    <div id = "postShell">
+      <div id = "contain">
+        <div id = "left">
+          <div id = "content">
+          </div>
+          <div id = "extras">
+            <div>time</div>
+            <div>reply</div>
+            <div>report</div>
+          </div>
         </div>
-        <div class = "actions">
+        <div id = "actions">
           <i id = "upvote" class="material-icons sub-actions">expand_less</i>
           <div id = voteCount>0</div>
           <i id = "downvote" class="material-icons sub-actions">expand_more</i>
         </div>
       </div>
+    </div>
+
+
 
     </div>
     <!-- spacer -->

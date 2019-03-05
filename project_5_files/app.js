@@ -3,7 +3,8 @@
 
 // Global Variables
 
-
+var postsDiv = [];
+var count = 0;
 
 
 	var hardText = [
@@ -37,7 +38,31 @@ function submitPost() {
 	console.log(hardText[1]);
 	all_posts.appendChild(subshell);
 	subshell.getElementsByTagName('div')[0].innerHTML = text;
+	postsDiv[count] = subshell;
+	count += 1;
+	console.log(postsDiv);
 }
+
+
+/* function replyPost() {
+	var replyText = document.getElementById('reply_text').value;
+	var shell = document.getElementById('all_replies');
+	var subshell = shell.cloneNode(true);
+	console.log(replyText);
+	replyShell.appendChild(subshell);
+	subshell.getElementsByTagName('div')[0].innerHTML = replyText;
+
+} */
+
+function replyPost() {	//this is trash
+	var replyText = document.getElementById('reply_text').value;
+	var shell = document.getElementById('all_replies');
+	var subshell = shell.cloneNode(true);
+	console.log(replyText);
+
+
+}
+
 
 function post() {
 
@@ -54,6 +79,7 @@ function post() {
 
 
 //newPost["reply"][2]
+
 
 
 
