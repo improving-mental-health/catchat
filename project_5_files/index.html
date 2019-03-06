@@ -32,18 +32,18 @@
 				</div>
 			</div>
 		</div>
-    <div hidden id="popupReplyBox">
-      <div class="popupBoxWrapper">
-        <div class="popupBoxContent">
-            <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupReplyBox');"><i class="material-icons">close</i></a></div>
-            <div id="post-title"><b>Reply</b></div>
-            <div id = post-field-textboxes>
-              <input id = "reply_text" type = "text" placeholder="What's on your mind?" name="post" class="post-input">
+    <div hidden id="popupBoxReply">
+			<div class="replyBoxWrapper">
+				<div class="replyBoxContent">
+            <div id="exit-reply"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxReply');"><i class="material-icons">close</i></a></div>
+            <div id="reply-title"><b>Reply Post</b></div>
+            <div id = reply-field-textboxes>
+              <input id = "reply_text" type = "text" placeholder="What's your Response?" name="reply" class="reply-input">
             </div>
-            <div id="post-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupReplyBox');replyPost()">Reply</a></div>
-        </div>
-      </div>
-    </div>
+            <div id="reply-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxReply');replyPost()">Reply</a></div> <!-- Need to add a reply post function -->
+				</div>
+			</div>
+		</div>
     <!-- Navbar (sit on top) -->
     <div id = "header">
       <div>CATCHAT</div>
@@ -62,19 +62,9 @@
               WOW! CATCHAT is just the greatest app in the world.
             </div>
             <div class = "extras">
-<<<<<<< HEAD
-              <div class = "widget">1 hour ago  |  </div>
-              <div class = "widget">
-                <a href="javascript:void(0)" onclick="toggle_visibility('popupReplyBox');">
-                  reply
-                </a>
-              </div>
-              <div class = "widget">report</div>
-=======
               <div class = "widget">just now  |  </div>
               <div class = "widget" id = "reply0">reply</div>
               <div class = "widget" id = "report0">report</div>
->>>>>>> refs/remotes/origin/master
             </div>
           </div>
         </div>
