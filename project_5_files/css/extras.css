@@ -1,3 +1,4 @@
+  color: white;
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
@@ -33,36 +34,39 @@ body, html {
 }
 
 .postShell{
-    border: 2px solid gray;
-    width: 90%;
-    align-items: center;
-    display: table;
-    margin-left: 5%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  border: 2px solid gray;
+  width: 90%;
+  align-items: center;
+  display: table;
+  margin-left: 5%;
+  margin-top: 20px;
 }
 #left{
   display: table-cell;
   width: 90%;
 }
-.voteCount0 {
+.voteCounter {
   padding-left: 12px;
 }
 .content{
   width: 75%;
-margin: 10px;
-padding: 20px;
-height: auto;
-display: table-cell;
+  margin: 10px;
+  padding: 20px;
+  height: auto;
+  display: table-cell;
+}
+.reply-content{
+  width: 75%;
+  margin: 10px;
+  padding-left: 20px;
+  height: auto;
+  display: table-cell;
 }
 .extras{
-
 padding-left: 11px;
 display: flex;
 font-size: 12px;
-
 }
-
 .widget{
   padding-left: 5px;
 }
@@ -70,6 +74,12 @@ font-size: 12px;
   height: 100%;
   vertical-align: middle;
   display: table-cell;
+}
+.reply-div{
+  height: auto;
+  width: 80%;
+  border:1px solid black;
+  margin-left: 10%;
 }
 
 #login-title{
@@ -145,6 +155,10 @@ font-size: 12px;
 
 /* Post Popup */
 #popupBoxOnePosition{
+  top: 0; left: 0; position: fixed; width: 100%; height: 120%;
+  background-color: rgba(0,0,0,0.7); display: none;
+}
+#popupReplyBox{
   top: 0; left: 0; position: fixed; width: 100%; height: 120%;
   background-color: rgba(0,0,0,0.7); display: none;
 }
@@ -254,8 +268,6 @@ font-size: 12px;
 
 
 
-
-
 #post_content{
   display: inline-flex;
 float: left;
@@ -270,12 +282,10 @@ margin-top: 10px;
 #header{
   height: 50px;
   background-color: #4A0E50;
+  color: white;
   width: 100%;
   overflow: hidden;
   position: fixed;
-
-
-
 }
 #footer{
   height: 50px;
@@ -284,8 +294,6 @@ margin-top: 10px;
   overflow: hidden;
   position: fixed;
   bottom: 0;
-
-
 }
 #sub-nav{
   width: 100%;
@@ -321,23 +329,6 @@ margin-top: 10px;
   background-size: cover;
 }
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('../images/parallax1.jpg');
-  min-height: 100%;
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url("../images/parallax2.jpg");
-  min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("../images/parallax3.jpg");
-  min-height: 400px;
-}
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
