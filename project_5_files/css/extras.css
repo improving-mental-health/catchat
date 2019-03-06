@@ -81,6 +81,47 @@ font-size: 12px;
   border:1px solid black;
   margin-left: 10%;
 }
+/*Account Popup*/
+#account_box{
+  display: inline-block;
+  margin-left: 50%;
+}
+#popupBoxAccount{
+  top: 0; left: 0; position: fixed; width: 100%; height: 120%;
+  background-color: rgba(0,0,0,0.7); display: none;
+}
+.accountBoxWrapper{
+  width: 550px; margin: 50px auto; text-align: center;
+}
+.accountBoxContent{
+  background-color: #FFF; padding: 15px;
+  height: 325px;
+  margin-top: 12%;
+}
+#account-title{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 22px;
+}
+
+.account-input{
+  width: 100%;
+  height: 134px;
+}
+#account-field-textboxes{
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+#exit-account{
+  float: right;
+  color: red;
+  z-index: -1;
+}
+.profile-picture{
+}
 
 #login-title{
   font-size: 20px;
