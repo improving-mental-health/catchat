@@ -6,7 +6,8 @@
 
 var currentPosts = [];
 var count = 0;
-
+var post_votes = [];
+post_votes[0] = 4;
 	function init() {
 		myStorage = window.localStorage;
 		//var posts = [];
@@ -44,28 +45,23 @@ function submitPost() {
 	}
 	else{
 
-		var newPost = {
-			"text" : document.getElementById('input_text').value,
-			"votes": 0,
-			"reply": []
-		}
-		currentPosts.push(text);
-		console.log(currentPosts)
-		localStorage.setItem("posts", currentPosts)
 
 
-	var shell = document.getElementById("postContainer");
+
+	var shell = document.getElementById("postContainer0");
 
 	var subshell = shell.cloneNode(true);
 	count += 1;
-	subshell.id = "postContainer" + count
-	subshell.getElementsByTagName('div')[5].id = "reply" + count
-	subshell.getElementsByTagName('div')[6].id = "report" + count
-	subshell.getElementsByTagName('div')[8].id = "upvote" + count
-	subshell.getElementsByTagName('div')[9].id = "voteCount" + count
-	subshell.getElementsByTagName('div')[10].id = "downvote" + count
+	subshell.id = "postContainer" + count;
+	subshell.getElementsByTagName('div')[5].id = "reply" + count;
+	subshell.getElementsByTagName('div')[6].id = "report" + count;
+	subshell.getElementsByTagName('div')[8].id = "upvote" + count;
+	subshell.getElementsByTagName('div')[9].id = "voteCount" + count;
+	subshell.getElementsByTagName('div')[10].id = "downvote" + count;
+	subshell.getElementsByTagName('div')[9].innerHTML = 0;
 	all_posts.appendChild(subshell);
 	subshell.getElementsByTagName('div')[2].innerHTML = text;
+<<<<<<< HEAD
 
 
 	document.getElementById('input_text').value = ""
@@ -112,12 +108,29 @@ function replyPost() {	//this is trash
 	all_posts.appendChild(subshell);
 	subshell.getElementsByTagName('div')[2].innerHTML = text;
 
+=======
+	currentPosts.push(text);
+	console.log(currentPosts)
+	document.getElementById('input_text').value = "";
+	post_votes[count] = 0;
+}
+}
+function upvote(id_name) {
+	var post_number = id_name.slice(6);
+	console.log(post_number);
+	post_votes[post_number] += 1;
+	total = post_votes[post_number];
+	document.getElementById('voteCount' + post_number).innerHTML = total;
+	console.log(post_votes)
+>>>>>>> refs/remotes/origin/master
 
 	document.getElementById('input_text').value = ""
 	}
 }
 
+function downvote(id_name) {
 
+<<<<<<< HEAD
 
 function post() {
 
@@ -152,8 +165,14 @@ function post() {
 	console.log(posts);
 
 }
+=======
+	var post_number = id_name.slice(8);
 
-function upvote() {
-	console.log("upvote");
-	document.getElementById("vote_count").innerHTML += 1;
+	console.log(post_number);
+	post_votes[post_number] -= 1;
+	total = post_votes[post_number];
+	document.getElementById('voteCount' + post_number).innerHTML = total;
+	console.log(post_votes);
+>>>>>>> refs/remotes/origin/master
+
 }
