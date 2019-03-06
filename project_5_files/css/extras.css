@@ -5,6 +5,10 @@ body, html {
   line-height: 1.8;
 }
 
+{
+  color: white;
+}
+
 
 /* login stuff */
 .login-form-container{
@@ -148,6 +152,10 @@ font-size: 12px;
   top: 0; left: 0; position: fixed; width: 100%; height: 120%;
   background-color: rgba(0,0,0,0.7); display: none;
 }
+#popupReplyBox{
+  top: 0; left: 0; position: fixed; width: 100%; height: 120%;
+  background-color: rgba(0,0,0,0.7); display: none;
+}
 .popupBoxWrapper{
   width: 550px; margin: 50px auto; text-align: center;
 }
@@ -179,8 +187,7 @@ font-size: 12px;
   z-index: -1;
 }
 
-#login-submit-button{
-}
+
 /*Reply*/
 #popupBoxReply{
   top: 0; left: 0; position: fixed; width: 100%; height: 120%;
@@ -270,6 +277,7 @@ margin-top: 10px;
 #header{
   height: 50px;
   background-color: #4A0E50;
+  color: white;
   width: 100%;
   overflow: hidden;
   position: fixed;

@@ -69,7 +69,7 @@ function submitPost() {
 
 
 	document.getElementById('input_text').value = ""
-}
+	}
 }
 
 
@@ -84,13 +84,39 @@ function submitPost() {
 } */
 
 function replyPost() {	//this is trash
-	var replyText = document.getElementById('reply_text').value;
-	var shell = document.getElementById('all_replies');
+	var text = document.getElementById('reply_text').value;
+	if (text == ""){
+		console.log("error: cannot make empty post");
+	}
+	else{
+		var newPost = {
+			"text" : document.getElementById('input_text').value,
+			"votes": 0,
+			"reply": []
+		}
+		currentPosts.push(text);
+		console.log(currentPosts)
+		localStorage.setItem("posts", currentPosts)
+
+
+	var shell = document.getElementById("postContainer");
+
 	var subshell = shell.cloneNode(true);
-	console.log(replyText);
+	count += 1;
+	subshell.id = "postContainer" + count
+	subshell.getElementsByTagName('div')[5].id = "reply" + count
+	subshell.getElementsByTagName('div')[6].id = "report" + count
+	subshell.getElementsByTagName('div')[8].id = "upvote" + count
+	subshell.getElementsByTagName('div')[9].id = "voteCount" + count
+	subshell.getElementsByTagName('div')[10].id = "downvote" + count
+	all_posts.appendChild(subshell);
+	subshell.getElementsByTagName('div')[2].innerHTML = text;
 
 
+	document.getElementById('input_text').value = ""
+	}
 }
+
 
 
 function post() {
@@ -108,10 +134,6 @@ function post() {
 
 
 //newPost["reply"][2]
-
-
-
-
 
 	// get new post from user input and append to "posts" array
 	var new_post = document.getElementById('new-post-text').value;
