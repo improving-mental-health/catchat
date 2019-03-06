@@ -6,7 +6,8 @@
 
 var currentPosts = [];
 var count = 0;
-
+var post_votes = [];
+post_votes[0] = 4;
 	function init() {
 		myStorage = window.localStorage;
 		//var posts = [];
@@ -44,94 +45,46 @@ function submitPost() {
 	}
 	else{
 
-		var newPost = {
-			"text" : document.getElementById('input_text').value,
-			"votes": 0,
-			"reply": []
-		}
-		currentPosts.push(text);
-		console.log(currentPosts)
-		localStorage.setItem("posts", currentPosts)
 
 
-	var shell = document.getElementById("postContainer");
+
+	var shell = document.getElementById("postContainer0");
 
 	var subshell = shell.cloneNode(true);
 	count += 1;
-	subshell.id = "postContainer" + count
-	subshell.getElementsByTagName('div')[5].id = "reply" + count
-	subshell.getElementsByTagName('div')[6].id = "report" + count
-	subshell.getElementsByTagName('div')[8].id = "upvote" + count
-	subshell.getElementsByTagName('div')[9].id = "voteCount" + count
-	subshell.getElementsByTagName('div')[10].id = "downvote" + count
+	subshell.id = "postContainer" + count;
+	subshell.getElementsByTagName('div')[5].id = "reply" + count;
+	subshell.getElementsByTagName('div')[6].id = "report" + count;
+	subshell.getElementsByTagName('div')[8].id = "upvote" + count;
+	subshell.getElementsByTagName('div')[9].id = "voteCount" + count;
+	subshell.getElementsByTagName('div')[10].id = "downvote" + count;
+	subshell.getElementsByTagName('div')[9].innerHTML = 0;
 	all_posts.appendChild(subshell);
 	subshell.getElementsByTagName('div')[2].innerHTML = text;
-
-
-	document.getElementById('input_text').value = ""
+	currentPosts.push(text);
+	console.log(currentPosts)
+	document.getElementById('input_text').value = "";
+	post_votes[count] = 0;
 }
 }
-
-
-/* function replyPost() {
-	var replyText = document.getElementById('reply_text').value;
-	var shell = document.getElementById('all_replies');
-	var subshell = shell.cloneNode(true);
-	console.log(replyText);
-	replyShell.appendChild(subshell);
-	subshell.getElementsByTagName('div')[0].innerHTML = replyText;
-
-} */
-
-function replyPost() {	//this is trash
-	var replyText = document.getElementById('reply_text').value;
-	var shell = document.getElementById('all_replies');
-	var subshell = shell.cloneNode(true);
-	console.log(replyText);
-
+function upvote(id_name) {
+	var post_number = id_name.slice(6);
+	console.log(post_number);
+	post_votes[post_number] += 1;
+	total = post_votes[post_number];
+	document.getElementById('voteCount' + post_number).innerHTML = total;
+	console.log(post_votes)
 
 }
 
+function downvote(id_name) {
 
-function post() {
+	var post_number = id_name.slice(8);
 
-	var currentPosts = localStorage.getItem("posts");
-	var newPost = {
-		"text" : document.getElementById('new-post-text').value,
-		"votes": 0,
-		"reply": []
+	console.log(post_number);
+	post_votes[post_number] -= 1;
+	total = post_votes[post_number];
+	document.getElementById('voteCount' + post_number).innerHTML = total;
+	console.log(post_votes);
 
-	}
-
-	currentPosts.append(newPost);
-	localStorage.setItem("posts", currentPosts)
-
-
-//newPost["reply"][2]
-
-
-
-
-
-	// get new post from user input and append to "posts" array
-	var new_post = document.getElementById('new-post-text').value;
-	posts.push(new_post);
-
-	var p = document.getElementById("testPost");
-	var p2 = p.cloneNode(true);
-	// generate a div for each post and display
-	for (var i = 0; i < posts.length; i++) {
-		console.log(i);
-
-		allposts.appendChild(p2);
-		p2.getElementsByTagName('div')[0].innerHTML = posts[i];
-
-	}
-	console.log(posts);
-
-}
-
-function upvote() {
-	console.log("upvote");
-	document.getElementById("vote_count").innerHTML += 1;
 }
