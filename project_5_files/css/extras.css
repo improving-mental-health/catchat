@@ -75,6 +75,28 @@ body, html {
   margin-bottom: 20px;
 }
 
+/* Splash Screen */
+
+#selection {
+  color: firebrick;
+  font-size: 235%;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  border: black;
+}
+
+.subject {
+  color: darkmagenta;
+  border: royalblue; 
+  border-style: solid;
+  border-style: round;
+  margin-bottom: 52px;
+  margin-left: 5px;
+  padding: 6px;
+  padding-left: 11px;
+  padding-right: 400px;
+}
+
 /* Post stuff */
 .postShell{
   border: 2px solid gray;
