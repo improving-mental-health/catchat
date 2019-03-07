@@ -69,7 +69,6 @@ function submitPost() {
 	subshell.id = "all_replies" + count;
 	all_posts.appendChild(subshell);
 
-
 	}
 }
 
