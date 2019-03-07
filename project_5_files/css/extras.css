@@ -19,20 +19,63 @@ body, html {
   height: 375px;
   text-align: center;
 }
+#create-account-link{
+  padding-top: 20px;
+}
 #testtable{
   border: 2px solid black;
   width: 90%;
   align-items: center;
-
 }
 #row {
   border: 2px solid black;
 }
 #main{
   border: 2px solid black;
-
 }
 
+#login-title{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+#field-names{
+  float: left;
+  width: 39%;
+  text-align: right;
+}
+
+#login-field-textboxes{
+  width: 60%;
+  display: inline-block;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.login-input{
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.login-field-label{
+  margin-bottom: 38px;
+}
+
+#login-submit-button{
+}
+
+.register-input{
+  margin-bottom: 10px;
+  width: 90%;
+}
+#register-title{
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Post stuff */
 .postShell{
   border: 2px solid gray;
   width: 90%;
@@ -123,36 +166,7 @@ font-size: 12px;
 .profile-picture{
 }
 
-#login-title{
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
 
-#field-names{
-  float: left;
-  width: 39%;
-  text-align: right;
-}
-
-#login-field-textboxes{
-  width: 60%;
-  display: inline-block;
-  text-align: center;
-}
-
-.login-input{
-  margin-bottom: 30px;
-  width: 90%;
-}
-
-.login-field-label{
-  margin-bottom: 38px;
-}
-
-#login-submit-button{
-
-}
 .myButton {
 	-moz-box-shadow: 3px 4px 0px 0px #1564ad;
 	-webkit-box-shadow: 3px 4px 0px 0px #1564ad;
