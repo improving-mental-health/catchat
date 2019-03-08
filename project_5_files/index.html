@@ -61,13 +61,15 @@
 
     <!-- Navbar (sit on top) -->
     <div id = "header">
-      <div>
-        <a href="splash.html" class="w3-bar-item w3-button" id= "logo">CATCHAT</a>
+      <div id = "topic_title">ANGST</div>
+      <div id = "action_container">
+        <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');" id = "account_box"><i class="material-icons" id = "action_logo">account_box</i></a></div>
+        <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');" id = "plus_post"><i class="material-icons" id = "action_logo">note_add</i></a></div>
       </div>
-      <a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');" id = "account_box"><i class="material-icons" id = "plus_post_logo">account_box</i></a>
-      <a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');" id = "plus_post"><i class="material-icons" id = "plus_post_logo">note_add</i></a>
     </div>
+
     <!-- spacer for formatting -->
+    <div id = "spacer"></div>
     <div id = "spacer"></div>
     <!-- main post container -->
     <div id = "all_posts">
@@ -130,7 +132,7 @@
     <!-- spacer -->
 
     <!-- footer -->
-    <div id = "footer"></div>
+
   </div>
 
   <script src = "app.js"></script>
