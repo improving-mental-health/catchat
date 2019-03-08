@@ -6,7 +6,6 @@ body, html {
   line-height: 1.8;
 }
 
-
 /* login stuff */
 .login-form-container{
   border: 2px solid purple;
@@ -146,6 +145,10 @@ font-size: 12px;
   border:1px solid black;
   margin-left: 10%;
 }
+.material-icons:hover {
+  cursor: pointer;
+}
+
 /*Account Popup*/
 #account_box{
   display: inline-block;
@@ -165,8 +168,8 @@ font-size: 12px;
 }
 #account-title{
   font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
   text-align: center;
   margin-left: 22px;
 }
@@ -186,6 +189,10 @@ font-size: 12px;
   z-index: -1;
 }
 .profile-picture{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  margin-bottom: 5px;
 }
 
 
