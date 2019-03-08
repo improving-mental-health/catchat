@@ -87,7 +87,7 @@ body, html {
 
 .subject {
   color: darkmagenta;
-  border: royalblue; 
+  border: royalblue;
   border-style: solid;
   border-style: round;
   margin-bottom: 52px;
@@ -146,6 +146,29 @@ font-size: 12px;
   border:1px solid black;
   margin-left: 10%;
 }
+
+.buttonStyle{
+  text-decoration: none;
+  color: white;
+}
+
+.small_text{
+  font-size: 17px;
+}
+
+
+#select_header{
+  text-align: center;
+  padding-top: 4%;
+  font-size: 50px;
+}
+.buttonStyle:hover   {
+  /* Applies to links under the pointer */
+  text-decoration:  none;
+  color:            white;
+
+  }
+
 /*Account Popup*/
 #account_box{
   display: inline-block;
