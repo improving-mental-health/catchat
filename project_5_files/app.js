@@ -92,22 +92,63 @@ function replyPost() {
 
 function upvote(id_name) {
 	var post_number = id_name.slice(6);
-	console.log(post_number);
-	post_votes[post_number] += 1;
-	total = post_votes[post_number];
-	document.getElementById('voteCount' + post_number).innerHTML = total;
-	console.log(post_votes)
+
+	if (document.getElementById('upvote' + post_number).style.color != 'blue') {
+		
+		// check if downvote was previously selected
+		if (document.getElementById('downvote' + post_number).style.color == 'blue'){
+			document.getElementById('downvote' + post_number).style.color = 'black';
+			post_votes[post_number] += 1;
+		}
+
+		// change color of upvote button
+		document.getElementById('upvote' + post_number).style.color = 'blue';
+		
+		// increment votes
+		console.log(post_number);
+		post_votes[post_number] += 1;
+		total = post_votes[post_number];
+		// update vote display
+		document.getElementById('voteCount' + post_number).innerHTML = total;
+		console.log(post_votes);
+
+	}
+	else {		// removing an upvote
+		document.getElementById('upvote' + post_number).style.color = 'black';
+		post_votes[post_number] -= 1;
+		document.getElementById('voteCount' + post_number).innerHTML = post_votes[post_number];
+	}
 
 }
 
 function downvote(id_name) {
-
 	var post_number = id_name.slice(8);
 
-	console.log(post_number);
-	post_votes[post_number] -= 1;
-	total = post_votes[post_number];
-	document.getElementById('voteCount' + post_number).innerHTML = total;
-	console.log(post_votes);
+	if (document.getElementById('downvote' + post_number).style.color != 'blue') {
+
+		// check if upvote was previously selected
+		if (document.getElementById('upvote' + post_number).style.color == 'blue'){
+			document.getElementById('upvote' + post_number).style.color = 'black';
+			post_votes[post_number] -= 1;
+		}
+		
+		// change color of upvote button
+		document.getElementById('downvote' + post_number).style.color = 'blue';
+
+		// decrement votes
+		console.log(post_number);
+		post_votes[post_number] -= 1;
+		total = post_votes[post_number];
+		document.getElementById('voteCount' + post_number).innerHTML = total;
+		console.log(post_votes);
+
+		// unselect upvote if it was previously selected
+		document.getElementById('upvote' + post_number).style.color = 'black';
+	}
+	else {		// removing a downvote
+		document.getElementById('downvote' + post_number).style.color = 'black';
+		post_votes[post_number] += 1;
+		document.getElementById('voteCount' + post_number).innerHTML = post_votes[post_number];
+	}
 
 }
