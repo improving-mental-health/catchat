@@ -21,14 +21,7 @@ body, html {
 #create-account-link{
   padding-top: 20px;
 }
-#testtable{
-  border: 2px solid black;
-  width: 90%;
-  align-items: center;
-}
-#row {
-  border: 2px solid black;
-}
+
 #main{
   border: 2px solid black;
 }
@@ -98,12 +91,10 @@ body, html {
 
 /* Post stuff */
 .postShell{
-  border: 2px solid gray;
-  width: 90%;
+  width: 100%;
   align-items: center;
   display: table;
-  margin-left: 5%;
-  margin-top: 20px;
+  margin-bottom: 10px;
 }
 #left{
   display: table-cell;
@@ -111,6 +102,7 @@ body, html {
 }
 .voteCounter {
   padding-left: 12px;
+  color: #6f42c1
 }
 .content{
   width: 75%;
@@ -142,7 +134,9 @@ font-size: 12px;
 .reply-div{
   height: auto;
   width: 80%;
-  border:1px solid black;
+  border:1px solid #6f42c1;
+
+  margin: 10px;
   margin-left: 10%;
 }
 
@@ -157,7 +151,7 @@ font-size: 12px;
 }
 
 .color_purp{
-  color: #660099;
+  color: #6f42c1;
 }
 
 #select_header{
@@ -389,7 +383,7 @@ margin-top: 10px;
 }
 #header{
   height: 100px;
-  background-color: #660099;
+  background-color: #6f42c1;
   color: white;
   width: 100%;
   overflow: hidden;
