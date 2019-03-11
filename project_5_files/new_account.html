@@ -1,35 +1,35 @@
 <html lang="en">
-  <head>
-    <title>CATCHAT Register</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet" href="css/extras.css">
-    <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="./css/floating-labels.css" rel="stylesheet">
-    <link href="./css/signin.css" rel="stylesheet">
-    <link href="./css/docsearch.min.css" rel="stylesheet">
-    <link href="./css/docs.min.css" rel="stylesheet">
-    <style>
-    .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+<head>
+  <title>CATCHAT Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/extras.css">
+  <!-- Bootstrap core CSS -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="./css/floating-labels.css" rel="stylesheet">
+  <link href="./css/signin.css" rel="stylesheet">
+  <link href="./css/docsearch.min.css" rel="stylesheet">
+  <link href="./css/docs.min.css" rel="stylesheet">
+  <style>
+  .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #6f42c1 !important;
-}
+  }
 </style>
-  </head>
-  <script>
-    var tries = 0;
-    function fieldsfull(){
-      var text1 = document.getElementById('inputNetID').value;
-      var text2 = document.getElementById('inputPassword').value;
-      var text3 = document.getElementById('inputUsername').value;
-      var text4 = document.getElementById('gender').value;
-      var text5 = document.getElementById('class').value;
+</head>
+<script>
+  var tries = 0;
+  function fieldsfull(){
+    var text1 = document.getElementById('inputNetID').value;
+    var text2 = document.getElementById('inputPassword').value;
+    var text3 = document.getElementById('inputUsername').value;
+    var text4 = document.getElementById('gender').value;
+    var text5 = document.getElementById('class').value;
 
-      if ((text1 == "") || (text2 == "") || (text3 == "") || (text4 == "") || (text5 == "")) {
-        console.log("fields must be full")}
+    if ((text1 == "") || (text2 == "") || (text3 == "") || (text4 == "") || (text5 == "")) {
+      console.log("fields must be full")}
       else if (tries == 0) {
         document.getElementById('headlogin').innerHTML = "Username already in use. Try again."
         tries += 1
@@ -48,36 +48,36 @@
   </script>
   <body class="text-center">
     <div class = "text-center" style = "padding-left: 38%;">
-<form class="form-signin">
-  <h1 class="h3 mb-3 font-weight-normal" id = "headlogin" style = "color: #6f42c1">Welcome to Catchat</h1>
-  <label  class="sr-only">NetID</label>
-  <input type="text" id="inputNetID" class="pt-2 form-control" placeholder="NetID" required autofocus="">
-  <label  class="sr-only">Username</label>
-  <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus="">
-  <label  class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus="">
+      <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal" id = "headlogin" style = "color: #6f42c1">Welcome to Catchat</h1>
+        <label  class="sr-only">NetID</label>
+        <input type="text" id="inputNetID" class="pt-2 form-control" placeholder="NetID" required autofocus="">
+        <label  class="sr-only">Username</label>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus="">
+        <label  class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus="">
 
-  <select class="custom-select d-block w-100" id="gender" required="">
-              <option value="">Gender...</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select>
-            <div class = "pt-2">
-            <select class=" custom-select d-block w-100" id="class" required="">
-                        <option value="">Class...</option>
-                        <option>Freshman</option>
-                        <option>Sophomore</option>
-                        <option>Junior</option>
-                        <option>Senior</option>
-                      </select>
-                    </div>
-</form>
-<a onclick="fieldsfull();collectfields()" ><button type = "submit"  class="  btn btn-lg  btn-block" >Sign in</button></a>
+        <select class="custom-select d-block w-100" id="gender" required="">
+          <option value="">Gender...</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+        <div class = "pt-2">
+          <select class=" custom-select d-block w-100" id="class" required="">
+            <option value="">Class...</option>
+            <option>Freshman</option>
+            <option>Sophomore</option>
+            <option>Junior</option>
+            <option>Senior</option>
+          </select>
+        </div>
+      </form>
+      <a onclick="fieldsfull();collectfields()" ><button type = "submit"  class="  btn btn-lg  btn-block" >Sign in</button></a>
 
-</div>
+    </div>
 
-<script src = "app.js"></script>
-</body>
+    <script src = "app.js"></script>
+  </body>
 
-</html>
+  </html>
