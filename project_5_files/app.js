@@ -50,14 +50,14 @@ function submitPost() {
 	count += 1;
 	subshell.id = "postContainer" + count;
 	subshell.getElementsByTagName('a')[0].id = "post" + count;
-	subshell.getElementsByTagName('div')[4].id = "reply" + count;
-	subshell.getElementsByTagName('div')[5].id = "report" + count;
-	subshell.getElementsByTagName('div')[7].id = "upvote" + count;
-	subshell.getElementsByTagName('div')[8].id = "voteCount" + count;
-	subshell.getElementsByTagName('div')[9].id = "downvote" + count;
-	subshell.getElementsByTagName('div')[8].innerHTML = 0;
+	subshell.getElementsByTagName('div')[5].id = "reply" + count;
+	subshell.getElementsByTagName('div')[6].id = "report" + count;
+	subshell.getElementsByTagName('div')[8].id = "upvote" + count;
+	subshell.getElementsByTagName('div')[9].id = "voteCount" + count;
+	subshell.getElementsByTagName('div')[10].id = "downvote" + count;
+	subshell.getElementsByTagName('div')[9].innerHTML = 0;
 	all_posts.appendChild(subshell);
-	subshell.getElementsByTagName('div')[1].innerHTML = text;
+	subshell.getElementsByTagName('div')[2].innerHTML = text;
 	currentPosts.push(text);
 	console.log(currentPosts)
 	document.getElementById('input_text').value = "";
@@ -83,18 +83,17 @@ function replyPost() {
 	}
 	else{
 		var shell = document.getElementById("reply0");
-
 		var subshell = shell.cloneNode(true);
 		subshell.style.display = "block";
 		count += 1;
 		subshell.id = "reply" + count;
-		subshell.getElementsByTagName('div')[3].id = "report" + count;
+	//	subshell.getElementsByTagName('div')[3].id = "report" + count;
 		var x = "all_replies" + replyNum;
 		console.log(x);
 		var y = document.getElementById(x);
 		console.log(y);
 		y.appendChild(subshell);
-		subshell.getElementsByTagName('div')[1].innerHTML = text;
+	//	subshell.getElementsByTagName('div')[1].innerHTML = text;
 
 		currentPosts.push(text);
 		console.log(currentPosts)
