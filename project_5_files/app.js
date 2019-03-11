@@ -7,6 +7,11 @@ var replyNum = 0;
 var currentPosts = [];
 var count = 0;
 var post_votes = [];
+var netID
+var password
+var username
+var gender
+var year
 post_votes[0] = 4;
 	function init() {
 		myStorage = window.localStorage;
@@ -72,7 +77,18 @@ function submitPost() {
 	}
 }
 
-
+function collectfields(){
+	netID = document.getElementById('inputNetID').value;
+	password = document.getElementById('inputPassword').value;
+	username = document.getElementById('inputUsername').value;
+	gender = document.getElementById('gender').value;
+	year = document.getElementById('class').value;
+	console.log(netID);
+	console.log(password);
+	console.log(username);
+	console.log(gender);
+	console.log(year);
+}
 function passReplyNum(id_name){
 	replyNum = id_name.slice(4);
 }
