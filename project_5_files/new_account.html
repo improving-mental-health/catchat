@@ -1,52 +1,55 @@
-<html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/w3.css">
-<link rel="stylesheet" href="css/extras.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<body>
-<!-- Navbar (sit on top) -->
-  <div id = "header">
-    <a href="index.html" class="w3-bar-item w3-button" id= "logo">CATCHAT</a>
-  </div>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="css/extras.css">
+    <title>Floating labels example for Bootstrap</title>
 
-  <div class = "login-form-container">
-    <div id="register-title"><b>Register for CATCHAT</b></div>
-    <div id = field-names>
-    </div>
-    <div id = login-field-textboxes>
-      <input type = "text" name="name" class="register-input" placeholder="First and Last Name*" required>
-      <input type = "text" name="NetID" class="register-input" placeholder="NetID*">
-      <input type="password" class="register-input" placeholder="Password*">
-      <br>
-      <div class="register-input">
-        Type*:
-        <select>
-          <option value="" selected disabled hidden>No Selection</option>
-          <option value="Undergraduate">Undergrad</option>
-          <option value="Graduate">Graduate</option>
-          <option value="Faculty">Faculty</option>
-        </select>
-      </div>
-      <div class="register-input">
-        Year:
-        <select>
-          <option value="" selected disabled hidden>No Selection</option>
-          <option value="2019">2019</option>
-          <option value="2020">2020</option>
-          <option value="2021">2021</option>
-          <option value="2022">2022</option>
-          <option value="2023">2023</option>
-          <option value="2024">2024</option>
-          <option value="N/A">N/A</option>
-        </select>
-      </div>
-    </div>
-    <div id="login-submit-button"><a href="splash.html" class="myButton">Create Account</a></div>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
 
-  </div>
-</body>
-</html>
+    <!-- Custom styles for this template -->
+    <link href="./css/floating-labels.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <form class="form-signin">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal color_purp" >Signup For Catchat</h1>
+
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="inputtext" class="form-control" name = "Username" placeholder="Username" required="" autofocus="">
+        <label for="inputtext">UserName</label>
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <label for="inputPassword">Password</label>
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <label for="inputPassword">Password</label>
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <label for="inputPassword">Password</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-secondary btn-block" type="submit"><a href="splash.html"  class = "buttonStyle">Login</a></button>
+        <div id="create-account-link" class = 'color_purp' style= "text-decoration: none;"><a href="index.html">Or Create Account</a></div>
+    </form>
+
+
+</body></html>
