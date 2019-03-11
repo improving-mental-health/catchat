@@ -1,51 +1,43 @@
-<html lang="en"><head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
     <link rel="stylesheet" href="css/extras.css">
-    <title>Floating labels example for Bootstrap</title>
-
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="./css/floating-labels.css" rel="stylesheet">
+    <link href="./css/signin.css" rel="stylesheet">
   </head>
+  <script>
+    function fieldsfull(){
+      var text1 = document.getElementById('inputNetID').value;
+      var text2 = document.getElementById('inputPassword').value;
 
-  <body>
-    <form class="form-signin">
-      <div class="text-center mb-4">
-        <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal color_purp" >Login to Catchat</h1>
+      if ((text1 == "") || (text2 == "")){
+        console.log("fields must be full")
+      }
+      else{
+        document.getElementById('headlogin').innerHTML = "Account does not exist."
+      }
+    }
 
-      </div>
-
-      <div class="form-label-group">
-        <input type="text" id="inputtext" class="form-control" name = "Username" placeholder="Username" required="" autofocus="">
-        <label for="inputtext">UserName</label>
-      </div>
-      <div class="form-label-group">
-        <input type="text" id="inputtext" class="form-control" name = "NetId" placeholder="NetID" required="" autofocus="">
-        <label for="inputtext">NetID</label>
-      </div>
-
-
-
-      <div class="form-label-group">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        <label for="inputPassword">Password</label>
-      </div>
-
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-secondary btn-block" type="submit"><a href="splash.html"  class = "buttonStyle">Login</a></button>
-        <div id="create-account-link" class = 'color_purp' style= "text-decoration: none;"><a href="index.html">Or Create Account</a></div>
-    </form>
+  </script>
+  <body class="text-center">
+    <div class = "text-center" style = "padding-left: 38%;">
+<form class="form-signin">
+  <h1 class="h3 mb-3 font-weight-normal" id = "headlogin" style = "color: #6f42c1">Welcome to Catchat</h1>
+  <label  class="sr-only">NetID</label>
+  <input type="text" id="inputNetID" class="form-control" placeholder="NetID" required autofocus="">
+  <label  class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus="">
+</form>
+<a onclick="fieldsfull()" ><button type = "submit"  class=" btn btn-lg  btn-block" >Sign in</button></a>
+<div class = "pt-2"><a href = "new_account.html">make an account</a></div>
+</div>
 
 
-</body></html>
+</body>
+</html>
