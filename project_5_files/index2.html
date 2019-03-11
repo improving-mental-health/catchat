@@ -92,7 +92,7 @@
                 <div class = "widget">just now  |  </div>
                 <!-- Reply Button -->
                 <div class = "widget" id ="reply0">
-                  <a href="javascript:void(0)" id="post0" onclick="toggle_visibility('popupReplyBox');passReplyNum(this.id)">
+                  <a href="javascript:void(0)" id="post0" onclick="toggle_visibility('popupReplyBox');passPostNum(this.id)">
                     reply
                   </a>
                 </div>
@@ -107,29 +107,57 @@
           </div>
         </div>
 
-        <h6 class="border-bottom border-gray pb-2 mb-0">Replies</h6>
+        <h6 class="all_replies border-bottom border-gray pb-2 mb-0">Replies</h6>
 
-        <div id = "all_replies0" class="media text-muted pt-3">
-          <div id ="reply0" >
+        <div id = "all_replies0" class="all_replies text-muted pt-3">
+          <div id ="reply0" class="replys">
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+            I agree
             <div id = "report0" class="pt-3 d-block text-gray-dark">report</div>
           </div>
           </div>
         </div>
-
-        <div id = "example_all_replies" class="media text-muted pt-3">
-          <div id ="reply0" >
-          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-            <div id = "report0" class="pt-3 d-block text-gray-dark">report</div>
-          </div>
-          </div>
-        </div>
-
-
-
       </div>
+
+
+      <!-- Example post containter -->
+      <div hidden id = "examplePostContainer" class="my-3 p-3 bg-white rounded box-shadow">
+        <div class = "postShell" >
+          <div id = "left">
+              <div class = "content">
+                WOW! CATCHAT is just the greatest app in the world
+              </div>
+              <div class = "extras">
+                <div class = "widget">just now  |  </div>
+                <!-- Reply Button -->
+                <div class = "widget" id ="reply0">
+                  <a href="javascript:void(0)" id="post0" onclick="toggle_visibility('popupReplyBox');passPostNum(this.id)">
+                    reply
+                  </a>
+                </div>
+                <!-- Report Button -->
+                <div class="widget" id="report0">report</div>
+              </div>
+          </div>
+          <div class = "actions">
+            <div id = "upvote0" onclick="upvote(this.id)"><i id = "upvote0" class="material-icons sub-actions">expand_less</i></div>
+            <div class = "voteCounter" id = voteCount0>4</div>
+            <div id = "downvote0" onclick = "downvote(this.id)"><i id = "downvote0" class="material-icons sub-actions">expand_more</i></div>
+          </div>
+        </div>
+
+        <h6 hidden id="replyHeader" class="all_replies border-bottom border-gray pb-2 mb-0">Replies</h6>
+
+        <div hidden id="example_all_replies0" class="all_replies text-muted pt-3"> </div>
+      </div>
+
+      <!-- Example Reply -->
+      <div hidden id ="exampleReply" class="replys">
+        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+          <div id = "report0" class="pt-3 d-block text-gray-dark">report</div>
+        </div>
+      </div>
+      
       </div>
 
 

@@ -7,33 +7,17 @@ var replyNum = 0;
 var currentPosts = [];
 var count = 0;
 var post_votes = [];
-var netID
-var password
-var username
-var gender
-var year
 post_votes[0] = 4;
-	function init() {
-		myStorage = window.localStorage;
-		//var posts = [];
-		myStorage.setItem("posts", []);
-
-
-	/*
-	var posts = [];
+var num_replies = [1];
+var num_posts;
+	
+function init() {
 	myStorage = window.localStorage;
-	var existingPosts =  myStorage.getItem('posts')
-	if(existingPosts) { //array exists
-		posts = existingPosts;
-	}
-	else{
-		myStorage.setItem("posts", []);
-	}
-	for(i = 0; i < posts.length; i++){
-		//populate divs with array
-		var post = posts[i];
-		post["text"]
-	}*/
+	//var posts = [];
+	myStorage.setItem("posts", []);
+
+	num_posts = 1;
+
 }
 /*var div = document.getElementById('div_id'),
     clone = div.cloneNode(true); // true means clone all childNodes and all event handlers
@@ -47,50 +31,34 @@ function submitPost() {
 		console.log("error: cannot make empty post");
 	}
 	else{
-
-
-	var shell = document.getElementById("postContainer0");
+	var shell = document.getElementById("examplePostContainer");
 
 	var subshell = shell.cloneNode(true);
 	count += 1;
 	subshell.id = "postContainer" + count;
+	subshell.style.display = "block";
 	subshell.getElementsByTagName('a')[0].id = "post" + count;
+	subshell.getElementsByTagName('h6')[0].id = "replyHeader" + count;
 	subshell.getElementsByTagName('div')[5].id = "reply" + count;
 	subshell.getElementsByTagName('div')[6].id = "report" + count;
 	subshell.getElementsByTagName('div')[8].id = "upvote" + count;
 	subshell.getElementsByTagName('div')[9].id = "voteCount" + count;
 	subshell.getElementsByTagName('div')[10].id = "downvote" + count;
+	subshell.getElementsByTagName('div')[11].id = "all_replies" + count;
 	subshell.getElementsByTagName('div')[9].innerHTML = 0;
 	all_posts.appendChild(subshell);
 	subshell.getElementsByTagName('div')[2].innerHTML = text;
-	currentPosts.push(text);
-	console.log(currentPosts)
 	document.getElementById('input_text').value = "";
 	post_votes[count] = 0;
 
-	// clone & append new dummy reply field below new post
-	shell = document.getElementById("example_all_replies");
-	subshell = shell.cloneNode(true);
-	subshell.id = "all_replies" + count;
-	all_posts.appendChild(subshell);
-
+	document.getElementById("postContainer" + count).removeAttribute("hidden");
+	num_replies.push(0)
 	}
 }
 
-function collectfields(){
-	netID = document.getElementById('inputNetID').value;
-	password = document.getElementById('inputPassword').value;
-	username = document.getElementById('inputUsername').value;
-	gender = document.getElementById('gender').value;
-	year = document.getElementById('class').value;
-	console.log(netID);
-	console.log(password);
-	console.log(username);
-	console.log(gender);
-	console.log(year);
-}
-function passReplyNum(id_name){
-	replyNum = id_name.slice(4);
+
+function passPostNum(id_name){
+	postNum = id_name.slice(4);
 }
 function replyPost() {
 	var text = document.getElementById('reply-text').value;
@@ -98,26 +66,29 @@ function replyPost() {
 		console.log("error: cannot make empty post");
 	}
 	else{
-		var shell = document.getElementById("reply0");
+
+		// show 'Replies' header if num_replies was previously equal to 0
+		if (num_replies[postNum] == 0){
+			document.getElementById("replyHeader" + postNum).removeAttribute("hidden");
+			document.getElementById("all_replies" + postNum).removeAttribute("hidden");
+		}
+
+		var shell = document.getElementById("exampleReply");
 		var subshell = shell.cloneNode(true);
-		subshell.style.display = "block";
-		count += 1;
-		subshell.id = "reply" + count;
+		subshell.removeAttribute("hidden");
+		subshell.id = "reply" + num_replies[postNum];
 	//	subshell.getElementsByTagName('div')[3].id = "report" + count;
-		var x = "all_replies" + replyNum;
-		console.log(x);
+		var x = "all_replies" + postNum;
 		var y = document.getElementById(x);
 		console.log(y);
 		y.appendChild(subshell);
-	//	subshell.getElementsByTagName('div')[1].innerHTML = text;
+		subshell.getElementsByTagName('div')[0].innerHTML = text + subshell.getElementsByTagName('div')[0].innerHTML;
 
-		currentPosts.push(text);
-		console.log(currentPosts)
-		document.getElementById('reply-text').value = "";
+		document.getElementById('reply-text').value = "";			//clear popup reply textfield 
 		post_votes[count] = 0;
+		num_replies[postNum] += 1
 	}
 }
-
 
 function upvote(id_name) {
 	var post_number = id_name.slice(6);
