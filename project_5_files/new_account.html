@@ -19,6 +19,7 @@
 </style>
   </head>
   <script>
+    var tries = 0;
     function fieldsfull(){
       var text1 = document.getElementById('inputNetID').value;
       var text2 = document.getElementById('inputPassword').value;
@@ -27,8 +28,12 @@
       var text5 = document.getElementById('class').value;
 
       if ((text1 == "") || (text2 == "") || (text3 == "") || (text4 == "") || (text5 == "")) {
-        console.log("fields must be full")
+        console.log("fields must be full")}
+      else if (tries == 0) {
+        document.getElementById('headlogin').innerHTML = "Username already in use. Try again."
+        tries += 1
       }
+
       else{
         window.location.href = 'splash.html';
         text1 = document.getElementById('inputNetID').value = ""
