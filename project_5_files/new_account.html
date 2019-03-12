@@ -30,10 +30,10 @@
 
     if ((text1 == "") || (text2 == "") || (text3 == "") || (text4 == "") || (text5 == "")) {
       console.log("fields must be full")}
-      else if (tries == 0) {
-        document.getElementById('headlogin').innerHTML = "Username already in use. Try again."
-        tries += 1
-      }
+    //  else if (tries == 0) {
+      //  document.getElementById('headlogin').innerHTML = "Username already in use. Try again."
+        //tries += 1
+      //}
 
       else{
         window.location.href = 'splash.html';
@@ -53,7 +53,7 @@
         <label  class="sr-only">NetID</label>
         <input type="text" id="inputNetID" class="pt-2 form-control" placeholder="NetID" required autofocus="">
         <label  class="sr-only">Username</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus="">
+        <input type="text" id="inputUsername" class="form-control" placeholder="First name" required autofocus="">
         <label  class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus="">
 
