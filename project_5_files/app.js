@@ -10,7 +10,7 @@ var post_votes = [];
 post_votes[0] = 4;
 var num_replies = [1];
 var num_posts;
-	
+
 function init() {
 	myStorage = window.localStorage;
 	//var posts = [];
@@ -84,7 +84,7 @@ function replyPost() {
 		y.appendChild(subshell);
 		subshell.getElementsByTagName('div')[0].innerHTML = text + subshell.getElementsByTagName('div')[0].innerHTML;
 
-		document.getElementById('reply-text').value = "";			//clear popup reply textfield 
+		document.getElementById('reply-text').value = "";			//clear popup reply textfield
 		post_votes[count] = 0;
 		num_replies[postNum] += 1
 	}

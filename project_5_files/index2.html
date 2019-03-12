@@ -13,6 +13,9 @@
   <link href="css/offcanvas.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body class="bg-light">
@@ -25,7 +28,7 @@
       e.style.display = 'block';
   }
   </script>
-  <div id="popupReplyBox">
+  <!-- <div id="popupReplyBox">
     <div class="popupBoxWrapper">
       <div class="popupBoxContent">
         <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupReplyBox');"><i class="material-icons">close</i></a></div>
@@ -36,9 +39,9 @@
         <div id="post-submit-button"><a href="javascript:void(0)" class ="myButton" onclick="toggle_visibility('popupReplyBox');replyPost()">Reply</a></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div id="popupBoxOnePosition">
+  <!-- <div id="popupBoxOnePosition">
    <div class="popupBoxWrapper">
     <div class="popupBoxContent">
       <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');"><i class="material-icons">close</i></a></div>
@@ -49,7 +52,45 @@
       <div id="post-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxOnePosition');submitPost()">Post</a></div>
     </div>
   </div>
+  </div> -->
+  <div id = "post-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Write Post</h5>
+        <button type="button" <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input id = "input_text" type = "text" placeholder="What's on your mind?" name="post" class="post-input">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick = "submitPost()" data-dismiss="modal">Post</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
   </div>
+</div>
+<div id = "reply-modal" class="modal" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Reply</h5>
+      <button type="button" <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <input id = "reply-text" type = "text" placeholder="What's on your mind?" name="reply" class="reply-input">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" onclick = "replyPost()" data-dismiss="modal">Reply</button>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+    </div>
+  </div>
+</div>
+</div>
 
 
   <div id="popupBoxAccount">
@@ -75,7 +116,7 @@
         <h6 class="mb-0 text-white lh-100">CatChat</h6>
         <small>An Anonymous Mental Health Platform</small>
         <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');" ><i class="material-icons" id = "action_logo">account_box</i></a></div>
-        <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');" ><i class="material-icons" id = "action_logo">note_add</i></a></div>
+        <div><a href="javascript:void(0)" data-toggle="modal" data-target="#post-modal" ><i class="material-icons" id = "action_logo">note_add</i></a></div>
       </div>
     </div>
 
@@ -93,7 +134,7 @@
               <div class = "widget">just now  |  </div>
               <!-- Reply Button -->
               <div class = "widget" id ="reply0">
-                <a href="javascript:void(0)" id="post0" onclick="toggle_visibility('popupReplyBox');passPostNum(this.id)">
+                <a href="javascript:void(0)" id="post0" data-toggle="modal" data-target="#reply-modal" onclick="passPostNum(this.id)">
                   reply
                 </a>
               </div>
@@ -132,7 +173,7 @@
               <div class = "widget">just now  |  </div>
               <!-- Reply Button -->
               <div class = "widget" id ="reply0">
-                <a href="javascript:void(0)" id="post0" onclick="toggle_visibility('popupReplyBox');passPostNum(this.id)">
+                <a href="javascript:void(0)" id="post0" data-toggle="modal" data-target="#reply-modal" onclick="passPostNum(this.id)">
                   reply
                 </a>
               </div>
