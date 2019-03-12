@@ -1,144 +1,108 @@
 <html lang="en">
-<head>
-  <title>CATCHAT</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel ="stylesheet" href= "css/extras.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Bootstrap core CSS -->
-  <link href="css/offcanvas.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel ="stylesheet" href= "css/extras.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
 
-<body class="bg-light">
-  <script type="text/javascript">
-   function toggle_visibility(id) {
-     var e = document.getElementById(id);
-     if(e.style.display == 'block')
-      e.style.display = 'none';
-    else
-      e.style.display = 'block';
-  }
-  </script>
-  <div id="popupReplyBox">
-    <div class="popupBoxWrapper">
-      <div class="popupBoxContent">
-        <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupReplyBox');"><i class="material-icons">close</i></a></div>
-        <div id="post-title"><b>Reply</b></div>
-        <div id = post-field-textboxes>
-          <input id = "reply-text" type = "text" placeholder="What's on your mind?" name="post" class="post-input">
+  <body class="bg-light">
+    <script type="text/javascript">
+  			    function toggle_visibility(id) {
+  			    var e = document.getElementById(id);
+  			    if(e.style.display == 'block')
+  			       e.style.display = 'none';
+  			    else
+  			       e.style.display = 'block';
+  			    }
+    </script>
+    <div id="popupReplyBox">
+      <div class="popupBoxWrapper">
+        <div class="popupBoxContent">
+            <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupReplyBox');"><i class="material-icons">close</i></a></div>
+            <div id="post-title"><b>Reply</b></div>
+            <div id = post-field-textboxes>
+              <input id = "reply-text" type = "text" placeholder="What's on your mind?" name="post" class="post-input">
+            </div>
+            <div id="post-submit-button"><a href="javascript:void(0)" class ="myButton" onclick="toggle_visibility('popupReplyBox');replyPost()">Reply</a></div>
         </div>
-        <div id="post-submit-button"><a href="javascript:void(0)" class ="myButton" onclick="toggle_visibility('popupReplyBox');replyPost()">Reply</a></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="popupBoxOnePosition">
-   <div class="popupBoxWrapper">
-    <div class="popupBoxContent">
-      <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');"><i class="material-icons">close</i></a></div>
-      <div id="post-title"><b>Write Post</b></div>
-      <div id = post-field-textboxes>
-        <input id = "input_text" type = "text" placeholder="What's on your mind?" name="post" class="post-input">
-      </div>
-      <div id="post-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxOnePosition');submitPost()">Post</a></div>
-    </div>
-  </div>
-  </div>
-
-
-  <div id="popupBoxAccount">
-   <div class="accountBoxWrapper">
-    <div class="accountBoxContent">
-      <div id="exit-account"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');"><i class="material-icons">close</i></a></div>
-      <div id="account-title"><b>User Profile</b></div>
-      <div><img class="profile-picture" src="images/morton.jpg"></div>
-      <div class = "user-name">Morton Schapiro</div>
-      <div class = "posts-made"> Posts Made: 7 </div>
-      <div class = "up-votes"> Total Upvotes: 23 </div>
-      <div class = "replies-made"> Total Replies: 5 </div>
-    </div>
-  </div>
-  </div>
-
-
-
-  <main role="main" class="container">
-    <div class="d-flex align-items-center p-3  text-white-50 bg-purple rounded box-shadow" style = "padding-top: 0px;">
-      <img class="mr-3" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
-      <div class="lh-100">
-        <h6 class="mb-0 text-white lh-100">CatChat</h6>
-        <small>An Anonymous Mental Health Platform</small>
-        <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');" ><i class="material-icons" id = "action_logo">account_box</i></a></div>
-        <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');" ><i class="material-icons" id = "action_logo">note_add</i></a></div>
       </div>
     </div>
 
-    <!-- begin all posts container -->
+      <div id="popupBoxOnePosition">
+  			<div class="popupBoxWrapper">
+  				<div class="popupBoxContent">
+              <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');"><i class="material-icons">close</i></a></div>
+              <div id="post-title"><b>Write Post</b></div>
+              <div id = post-field-textboxes>
+                <input id = "input_text" type = "text" placeholder="What's on your mind?" name="post" class="post-input">
+              </div>
+              <div id="post-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxOnePosition');submitPost()">Post</a></div>
+  				</div>
+  			</div>
+  		</div>
 
-    <div id = "all_posts">
+
+      <div id="popupBoxAccount">
+  			<div class="accountBoxWrapper">
+  				<div class="accountBoxContent">
+              <div id="exit-account"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');"><i class="material-icons">close</i></a></div>
+              <div id="account-title"><b>User Profile</b></div>
+              <div><img class="profile-picture" src="images/morton.jpg"></div>
+              <div class = "user-name">Morton Schapiro</div>
+              <div class = "posts-made"> Posts Made: 7 </div>
+              <div class = "up-votes"> Total Upvotes: 23 </div>
+              <div class = "replies-made"> Total Replies: 5 </div>
+  				</div>
+  			</div>
+  		</div>
+
+
+
+    <main role="main" class="container">
+      <div class="d-flex align-items-center p-3  text-white-50 bg-purple rounded box-shadow" style = "padding-top: 0px;">
+        <img class="mr-3" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
+        <div class="lh-100" style = "width: 100%; display: contents;">
+          <div>
+            <h6 class="mb-0 text-white lh-100">CatChat</h6>
+            <small>An Anonymous Mental Health Platform</small>
+          </div>
+          <div id = "action_icons">
+            <div style = "padding-left: 40px;"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');" ><i class="material-icons" id = "action_logo">account_box</i></a></div>
+            <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');" ><i class="material-icons" id = "action_logo">note_add</i></a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- begin all posts container -->
+
+      <div id = "all_posts">
 
       <div id = "postContainer0" class="my-3 p-3 bg-white rounded box-shadow">
         <div class = "postShell" >
           <div id = "left">
-            <div class = "content">
-              WOW! CATCHAT is just the greatest app in the world
-            </div>
-            <div class = "extras">
-              <div class = "widget">just now  |  </div>
-              <!-- Reply Button -->
-              <div class = "widget" id ="reply0">
-                <a href="javascript:void(0)" id="post0" onclick="toggle_visibility('popupReplyBox');passPostNum(this.id)">
-                  reply
-                </a>
+              <div class = "content">
+                WOW! CATCHAT is just the greatest app in the world
               </div>
-              <!-- Report Button -->
-              <div class="widget" id="report0">report</div>
-            </div>
-          </div>
-          <div class = "actions">
-            <div id = "upvote0" onclick="upvote(this.id)"><i id ="upvote0" class="material-icons sub-actions">expand_less</i></div>
-            <div class = "voteCounter" id = voteCount0>4</div>
-            <div id = "downvote0" onclick = "downvote(this.id)"><i id = "downvote0" class="material-icons sub-actions">expand_more</i></div>
-          </div>
-        </div>
-
-        <h6 class="all_replies border-bottom border-gray pb-2 mb-0">Replies</h6>
-
-        <div id = "all_replies0" class="all_replies text-muted pt-3">
-          <div id ="reply0" class="replys">
-            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-              I agree
-              <div id = "report0" class="pt-3 d-block text-gray-dark">report</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Example post containter -->
-      <div hidden id = "examplePostContainer" class="my-3 p-3 bg-white rounded box-shadow">
-        <div class = "postShell" >
-          <div id = "left">
-            <div class = "content">
-              WOW! CATCHAT is just the greatest app in the world
-            </div>
-            <div class = "extras">
-              <div class = "widget">just now  |  </div>
-              <!-- Reply Button -->
-              <div class = "widget" id ="reply0">
-                <a href="javascript:void(0)" id="post0" onclick="toggle_visibility('popupReplyBox');passPostNum(this.id)">
-                  reply
-                </a>
+              <div class = "extras">
+                <div class = "widget">just now  |  </div>
+                <!-- Reply Button -->
+                <div class = "widget" id ="reply0">
+                  <a href="javascript:void(0)" id="post0" onclick="toggle_visibility('popupReplyBox');passReplyNum(this.id)">
+                    reply
+                  </a>
+                </div>
+                <!-- Report Button -->
+                <div class="widget" id="report0">report</div>
               </div>
-              <!-- Report Button -->
-              <div class="widget" id="report0">report</div>
-            </div>
           </div>
           <div class = "actions">
             <div id = "upvote0" onclick="upvote(this.id)"><i id = "upvote0" class="material-icons sub-actions">expand_less</i></div>
@@ -147,23 +111,34 @@
           </div>
         </div>
 
-        <h6 hidden id="replyHeader" class="all_replies border-bottom border-gray pb-2 mb-0">Replies</h6>
+        <h6 class="border-bottom border-gray pb-2 mb-0">Replies</h6>
 
-        <div hidden id="example_all_replies0" class="all_replies text-muted pt-3"> </div>
-      </div>
-
-      <!-- Example Reply -->
-      <div hidden id ="exampleReply" class="replys">
-        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-          <div id = "report0" class="pt-3 d-block text-gray-dark">report</div>
+        <div id = "all_replies0" class="media text-muted pt-3">
+          <div id ="reply0" >
+          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+            <div id = "report0" class="pt-3 d-block text-gray-dark">report</div>
+          </div>
+          </div>
         </div>
+
+        <div id = "example_all_replies" class="media text-muted pt-3">
+          <div id ="reply0" >
+          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+            <div id = "report0" class="pt-3 d-block text-gray-dark">report</div>
+          </div>
+          </div>
+        </div>
+
+
+
+      </div>
       </div>
 
-    </div>
 
 
-
-  </main>
+    </main>
 <script src = "app.js"></script>
 </body>
 
