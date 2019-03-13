@@ -402,12 +402,7 @@ margin-top: 10px;
   position: fixed;
   display: flex;
 }
-#action_logo{
 
-}
-#action_container{
-
-}
 #topic_title{
   font-size:60px;
   width: auto;
@@ -443,6 +438,20 @@ margin-top: 10px;
 .sub-actions{
   margin: 5px;
 }
+#action_icons{
+  float: right;
+  display: inline-flex;
+}
+#action_icons:hover{
+  text-decoration: none;
+}
+#action_logo{
+  text-decoration: none;
+  color: white;
+  margin: 10px;
+  font-size: 35px;
+}
+
 
 
 
