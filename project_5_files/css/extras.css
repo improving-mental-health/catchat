@@ -440,6 +440,7 @@ margin-top: 10px;
 }
 #action_icons{
   float: right;
+  padding-left: 20%;
   display: inline-flex;
 }
 #action_icons:hover{
