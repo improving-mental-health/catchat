@@ -1,4 +1,4 @@
-  color: white;
+color: white;
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
@@ -14,22 +14,7 @@ body, html {
 .all_replies{
   margin-left: 30px;
 }
-#action_icons{
-  float: right;
-  display: inline-flex;
-}
-#action_icons:hover{
-  text-decoration: none;
-}
-i{
-  text-decoration: none;
-  color: white;
-  margin: 10px;
-}
 
-#action_logo{
-  font-size: 35px;
-}
 /* login stuff */
 .login-form-container{
   border: 2px solid purple;
@@ -417,7 +402,9 @@ margin-top: 10px;
   position: fixed;
   display: flex;
 }
+#action_logo{
 
+}
 #action_container{
 
 }
