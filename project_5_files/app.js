@@ -10,7 +10,7 @@ var post_votes = [];
 post_votes[0] = 4;
 var num_replies = [1];
 var num_posts;
-	
+
 function init() {
 	myStorage = window.localStorage;
 	//var posts = [];
@@ -84,7 +84,7 @@ function replyPost() {
 		y.appendChild(subshell);
 		subshell.getElementsByTagName('div')[0].innerHTML = text + subshell.getElementsByTagName('div')[0].innerHTML;
 
-		document.getElementById('reply-text').value = "";			//clear popup reply textfield 
+		document.getElementById('reply-text').value = "";			//clear popup reply textfield
 		post_votes[count] = 0;
 		num_replies[postNum] += 1
 	}
@@ -94,7 +94,7 @@ function upvote(id_name) {
 	var post_number = id_name.slice(6);
 
 	if (document.getElementById('upvote' + post_number).style.color != 'blue') {
-		
+
 		// check if downvote was previously selected
 		if (document.getElementById('downvote' + post_number).style.color == 'blue'){
 			document.getElementById('downvote' + post_number).style.color = 'black';
@@ -103,7 +103,7 @@ function upvote(id_name) {
 
 		// change color of upvote button
 		document.getElementById('upvote' + post_number).style.color = 'blue';
-		
+
 		// increment votes
 		console.log(post_number);
 		post_votes[post_number] += 1;
@@ -131,7 +131,7 @@ function downvote(id_name) {
 			document.getElementById('upvote' + post_number).style.color = 'black';
 			post_votes[post_number] -= 1;
 		}
-		
+
 		// change color of upvote button
 		document.getElementById('downvote' + post_number).style.color = 'blue';
 
