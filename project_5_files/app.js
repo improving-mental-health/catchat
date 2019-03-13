@@ -124,7 +124,7 @@ function upvote(id_name) {
 function downvote(id_name) {
 	var post_number = id_name.slice(8);
 
-	if (document.getElementById('downvote' + post_number).style.color != '') {
+	if (document.getElementById('downvote' + post_number).style.color != 'blue') {
 
 		// check if upvote was previously selected
 		if (document.getElementById('upvote' + post_number).style.color == 'blue'){
