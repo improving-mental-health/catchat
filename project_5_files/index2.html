@@ -114,16 +114,12 @@
   <main role="main" class="container">
     <div class="d-flex align-items-center p-3  text-white-50 bg-purple rounded box-shadow" style = "padding-top: 0px;">
       <img class="mr-3" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
-      <div class="lh-100" style = "width: 100%; display: contents;">
-          <div>
-            <h6 class="mb-0 text-white lh-100">CatChat</h6>
-            <small>An Anonymous Mental Health Platform</small>
-          </div>
-          <div id = "action_icons">
-            <div style = "padding-left: 40px;"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');" ><i class="material-icons" id = "action_logo">account_box</i></a></div>
-            <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');" ><i class="material-icons" id = "action_logo">note_add</i></a></div>
-          </div>
-        </div>
+      <div class="lh-100">
+        <h6 class="mb-0 text-white lh-100">CatChat</h6>
+        <small>An Anonymous Mental Health Platform</small>
+        <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');" ><i class="material-icons" id = "action_logo">account_box</i></a></div>
+        <div><a href="javascript:void(0)" data-toggle="modal" data-target="#post-modal" ><i class="material-icons" id = "action_logo">note_add</i></a></div>
+      </div>
     </div>
 
     <!-- begin all posts container -->
