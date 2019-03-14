@@ -42,11 +42,12 @@
 
   </div>
 
+  <!-- Post Popup Box -->
   <div id = "post-modal" class="modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Write Post</h5>
+            <h4 class="modal-title">Write Post</h4>
             <button type="button" <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -60,12 +61,14 @@
           </div>
         </div>
       </div>
-    </div>
-    <div id = "reply-modal" class="modal" tabindex="-1" role="dialog">
+  </div>
+
+  <!-- Reply Popup Box -->
+  <div id = "reply-modal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Reply</h5>
+          <h4 class="modal-title">Reply</h4>
           <button type="button" <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -79,19 +82,65 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 
-  <div id="popupBoxOnePosition">
-   <div class="popupBoxWrapper">
-    <div class="popupBoxContent">
-      <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');"><i class="material-icons">close</i></a></div>
-      <div id="post-title"><b>Write Post</b></div>
-      <div id = post-field-textboxes>
-        <input id = "input_text" type = "text" placeholder="What's on your mind?" name="post" class="post-input">
+  <!-- Report Popup Box -->
+  <div id = "report-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Report a Post</h4>
+          <button type="button" <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- Radio Buttons -->
+        <div class="modal-body">
+            <div class="form-check">
+              <label>
+                <input type="radio" name="radio" checked> <span class="label-text">Irrelevant Content</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <label>
+                <input type="radio" name="radio"> <span class="label-text">Hate Speach</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <label>
+                <input type="radio" name="radio"> <span class="label-text">Inappropriate Language</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <label>
+                <input type="radio" name="radio"> <span class="label-text">Spam</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <label>
+                <input type="radio" name="radio"> <span class="label-text">Other</span>
+              </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Report</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
       </div>
-      <div id="post-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxOnePosition');submitPost()">Post</a></div>
     </div>
   </div>
+
+  <div id="popupBoxOnePosition">
+    <div class="popupBoxWrapper">
+      <div class="popupBoxContent">
+        <div id="exit-post"><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxOnePosition');"><i class="material-icons">close</i></a></div>
+        <div id="post-title"><b>Write Post</b></div>
+        <div id = post-field-textboxes>
+          <input id = "input_text" type = "text" placeholder="What's on your mind?" name="post" class="post-input">
+        </div>
+        <div id="post-submit-button"><a href="javascript:void(0)" class = "myButton" onclick="toggle_visibility('popupBoxOnePosition');submitPost()">Post</a></div>
+      </div>
+    </div>
   </div>
 
 
@@ -116,8 +165,8 @@
       <img class="mr-3" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
       <div class="lh-100" style = "width: 100%; display: contents;">
           <div>
-            <h6 class="mb-0 text-white lh-100">CatChat</h6>
-            <small>An Anonymous Mental Health Platform</small>
+            <h3 class="mb-0 text-white lh-100">CatChat</h3>
+            <p>An Anonymous Mental Health Platform</p>
           </div>
           <div id = "action_icons">
             <div><a href="javascript:void(0)" onclick="toggle_visibility('popupBoxAccount');" ><i class="material-icons" id = "action_logo">account_box</i></a></div>
@@ -130,6 +179,7 @@
 
     <div id = "all_posts">
 
+      <!-- First Post (default post) -->
       <div id = "postContainer0" class="my-3 p-3 bg-white rounded box-shadow">
         <div class = "postShell" >
           <div id = "left">
@@ -145,7 +195,11 @@
                 </a>
               </div>
               <!-- Report Button -->
-              <div class="widget" id="report0">report</div>
+              <div class="widget" id="report0">
+                <a href="javascript:void(0)" id="report0" data-toggle="modal" data-target="#report-modal" onclick="passPostNum(this.id)">
+                  report
+                </a>
+              </div>
             </div>
           </div>
           <div class = "actions">
@@ -161,7 +215,9 @@
           <div id ="reply0" class="replys">
             <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
               I agree
-              <div id = "report0" class="pt-3 d-block text-gray-dark">report</div>
+              <div id = "report0" class="pt-3 d-block text-gray-dark"><a href="javascript:void(0)" id="report0" data-toggle="modal" data-target="#report-modal">
+                  report
+                </a></div>
             </div>
           </div>
         </div>
@@ -184,7 +240,11 @@
                 </a>
               </div>
               <!-- Report Button -->
-              <div class="widget" id="report0">report</div>
+              <div class="widget" id="report0">
+                <a href="javascript:void(0)" id="report0" data-toggle="modal" data-target="#report-modal">
+                  report
+                </a>
+              </div>
             </div>
           </div>
           <div class = "actions">
@@ -202,7 +262,8 @@
       <!-- Example Reply -->
       <div hidden id ="exampleReply" class="replys">
         <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-          <div id = "report0" class="pt-3 d-block text-gray-dark">report</div>
+          <div id = "report0" class="pt-3 d-block text-gray-dark"><a href="javascript:void(0)" id="report0" data-toggle="modal" data-target="#report-modal">report</a>
+          </div>
         </div>
       </div>
 
