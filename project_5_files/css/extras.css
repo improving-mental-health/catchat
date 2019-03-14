@@ -77,7 +77,6 @@ body, html {
 }
 
 /* Splash Screen */
-
 #selection {
   color: firebrick;
   font-size: 235%;
@@ -128,7 +127,7 @@ body, html {
   display: table-cell;
 }
 .extras{
-padding-left: 11px;
+padding-left: 17px;
 display: flex;
 font-size: 12px;
 }
@@ -174,16 +173,14 @@ display: block;
 .buttonStyle:hover   {
   /* Applies to links under the pointer */
   text-decoration:  none;
-  color:            white;
-
-  }
+  color: white;
+}
 
 .material-icons:hover {
   cursor: pointer;
 }
 
 /*Account Popup*/
-
 #popupBoxAccount{
   top: 0; left: 0; position: fixed; width: 100%; height: 120%;
   background-color: rgba(0,0,0,0.7); display: none;
@@ -222,7 +219,11 @@ display: block;
   height: 130px;
   width: 130px;
   border-radius: 50%;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+}
+.user-name{
+  padding-bottom: 12px;
+  font-size: 16px;
 }
 
 
@@ -344,6 +345,76 @@ display: block;
   color: red;
   z-index: -1;
 }
+
+/* Report Popup */
+input[type="radio"]{
+  position: absolute;
+  right: 9000px;
+}
+
+input[type="radio"] + .label-text:before{
+  content: "\f10c";
+  font-family: "FontAwesome";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing:antialiased;
+  width: 1em;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+input[type="radio"]:checked + .label-text:before{
+  content: "\f192";
+  color: #8e44ad;
+  animation: effect 250ms ease-in;
+}
+
+input[type="radio"]:disabled + .label-text{
+  color: #aaa;
+}
+
+input[type="radio"]:disabled + .label-text:before{
+  content: "\f111";
+  color: #ccc;
+}
+
+/*Report Popup*/
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+input[type="radio"] + .label-text:before{
+  content: "\f10c";
+  font-family: "FontAwesome";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing:antialiased;
+  width: 1em;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+input[type="radio"]:checked + .label-text:before{
+  content: "\f192";
+  color: #8e44ad;
+  animation: effect 250ms ease-in;
+}
+
+input[type="radio"]:disabled + .label-text{
+  color: #aaa;
+}
+
+input[type="radio"]:disabled + .label-text:before{
+  content: "\f111";
+  color: #ccc;
+}
+
 #myNavbar{
   background-color: #4A0E50;
   height: 60px;
@@ -450,7 +521,7 @@ margin-top: 10px;
   text-decoration: none;
   color: white;
   margin: 10px;
-  font-size: 35px;
+  font-size: 40px;
 }
 
 
@@ -475,3 +546,5 @@ margin-top: 10px;
     min-height: 400px;
   }
 }
+
+
