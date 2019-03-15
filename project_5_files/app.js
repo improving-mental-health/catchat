@@ -11,20 +11,80 @@ post_votes[0] = 4;
 var num_replies = [1];
 var num_posts;
 
-function init() {
-	myStorage = window.localStorage;
-	//var posts = [];
-	myStorage.setItem("posts", []);
+//data collection
+var netid;
+var firstname;
+var sex;
+var year;
+var join_date;
+var user_post_count;
 
-	num_posts = 1;
+
+
+function reported() {
+	alert("This post has been reported to administrators.");
+}
+function fieldsfull(){
+	var text1 = document.getElementById('inputNetID').value;
+	var text2 = document.getElementById('inputPassword').value;
+	var text3 = document.getElementById('inputUsername').value;
+	var text4 = document.getElementById('gender').value;
+	var text5 = document.getElementById('class').value;
+
+	if ((text1 == "") || (text2 == "") || (text3 == "") || (text4 == "") || (text5 == "")) {
+		alert("Must fill all fields to proceed");
+		console.log("fields must be full")}
+
+		else{
+			collectfields()
+			window.location.href = 'splash.html';
+			text1 = document.getElementById('inputNetID').value = ""
+			text2 = document.getElementById('inputPassword').value = ""
+			text3 = document.getElementById('inputUsername').value = ""
+			text4 = document.getElementById('gender').value = ""
+			text5 = document.getElementById('class').value = ""
+		}
+	}
+
+function collectfields(){
+	console.log("collect fields is running")
+	localStorage.setItem("netid", document.getElementById('inputNetID').value)
+	localStorage.setItem("password", document.getElementById('inputPassword').value)
+  localStorage.setItem("firstname", document.getElementById('inputUsername').value)
+  localStorage.setItem("sex", document.getElementById('gender').value)
+  localStorage.setItem("year", document.getElementById('class').value)
+	localStorage.setItem("join_date", "March 2019")
+	localStorage.setItem(user_post_count, 0)
 
 }
-/*var div = document.getElementById('div_id'),
-    clone = div.cloneNode(true); // true means clone all childNodes and all event handlers
-clone.id = "some_id";
-document.body.appendChild(clone); */
+function savetopic(passed_top){
+	localStorage.setItem("topic", passed_top)
+}
+function populate(){
+	console.log("pop is running")
+	firstname = localStorage.getItem("firstname")
+	if (firstname == "Gabriel" || firstname == "gabriel"){
+		document.getElementById('propic').src = "https://media.licdn.com/dms/image/C4D03AQEwcydfgg_tsA/profile-displayphoto-shrink_800_800/0?e=1557964800&v=beta&t=_EdeWyR4Z_5Y2plIq4cYv_0xHySNdbhn_89S_NL0xtg"
+	}
+	else if (firstname == "David"){
+		document.getElementById('propic').src = "https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/c0.0.842.842a/p843x403/40548471_1085246518308643_4558062832045785088_n.jpg?_nc_cat=108&_nc_ht=scontent-ort2-1.xx&oh=c67129b162b1479514e31a0c98a90a4f&oe=5D1671FD"
+	}
+	console.log(localStorage.getItem("topic"))
+	document.getElementById("topic").innerHTML = localStorage.getItem("topic")
+	document.getElementById('netid').innerHTML = localStorage.getItem('netid')
+	document.getElementById('firstname').innerHTML = localStorage.getItem('firstname')
+	document.getElementById('sex').innerHTML = localStorage.getItem('sex')
+	document.getElementById('year').innerHTML = localStorage.getItem('year')
+	document.getElementById('join_date').innerHTML = localStorage.getItem('join_date')
+	document.getElementById('user_post_count').innerHTML = localStorage.getItem(user_post_count)
+}
 
 function submitPost() {
+	var temp_count = localStorage.getItem(user_post_count)
+	temp_count = Number(temp_count)
+	temp_count += 1
+	console.log(temp_count)
+	localStorage.setItem(user_post_count, temp_count)
 
 	var text = document.getElementById('input_text').value;
 	if (text == ""){
@@ -53,6 +113,7 @@ function submitPost() {
 
 	document.getElementById("postContainer" + count).removeAttribute("hidden");
 	num_replies.push(0)
+	populate()
 	}
 }
 

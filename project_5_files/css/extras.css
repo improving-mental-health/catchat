@@ -377,6 +377,19 @@ input[type="radio"]:disabled + .label-text{
   color: #aaa;
 }
 
+a:link{
+    color: #8e44ad;
+    text-decoration: none;
+}
+
+a:hover{
+  color: #8e44ad;
+  text-decoration: none;
+}
+
+div{
+  color: #5b5b5b;
+}
 input[type="radio"]:disabled + .label-text:before{
   content: "\f111";
   color: #ccc;
@@ -546,5 +559,3 @@ margin-top: 10px;
     min-height: 400px;
   }
 }
-
-
