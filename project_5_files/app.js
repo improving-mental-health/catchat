@@ -19,7 +19,25 @@ var year;
 var join_date;
 var user_post_count;
 
-
+function update_starter(topic){
+	console.log(topic)
+	if(topic == "Academics"){
+		localStorage.setItem("topic_post", "I literally just bombed my EECS 919 midterm")
+		localStorage.setItem("topic_reply", "My GPA is so low it has the boots with the fur")
+	}
+	else if (topic == "Relationships") {
+		localStorage.setItem("topic_post","Why doesn't my boyfriend want to meet my parents?")
+		localStorage.setItem("topic_reply", "I've only been with my boyfriend for a month and he already wants to meet my parents. Like he needs to chill. I waited 9 months before I met them myself.")
+	}
+	else if (topic == "Bummed"){
+		localStorage.setItem("topic_post", "Isn't beef jerky like a cow raisin?")
+		localStorage.setItem("topic_reply", "Literally what does this have to do with anything?")
+	}
+	else if (topic == "Feeling Good") {
+		localStorage.setItem("topic_post", "Thanks to whoever saved a poor soul who fell on ice outside of University this morning.")
+		localStorage.setItem("topic_reply", "Any time!")
+	}
+}
 
 function reported() {
 	alert("This post has been reported to administrators.");
@@ -61,6 +79,8 @@ function savetopic(passed_top){
 	localStorage.setItem("topic", passed_top)
 }
 function populate(){
+	document.getElementById("starter_post").innerHTML = localStorage.getItem("topic_post")
+	document.getElementById("sample_reply").innerHTML = localStorage.getItem("topic_reply")
 	console.log("pop is running")
 	firstname = localStorage.getItem("firstname")
 	if (firstname == "Gabriel" || firstname == "gabriel"){
